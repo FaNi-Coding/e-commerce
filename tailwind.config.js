@@ -23,7 +23,9 @@ module.exports = {
       fourthly: '#fbaf85',
       'snow-white': '#FAFAFA',
       error: '#CD2C2C',
+      white: '#FFFFFF',
+      black: '#000000',
     },
   },
   plugins: [],
-}
+};
