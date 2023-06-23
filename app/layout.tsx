@@ -1,7 +1,8 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css'
+
+const manrope = Manrope({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'E-commerce 2.0',
@@ -16,9 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={manrope.className}>
         <header>Header Section</header>
-        <main>{children}</main>
+        <main>
+          <div>{children}</div>
+        </main>
         <footer>Footer Section</footer>
       </body>
     </html>
