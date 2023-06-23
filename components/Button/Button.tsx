@@ -1,6 +1,7 @@
-import { FC } from 'react';
-import Link from 'next/link';
-import { ButtonProps } from './buttonTypes';
+import Link from 'next/link'
+import { FC } from 'react'
+
+import { ButtonProps } from './buttonTypes'
 
 const Button: FC<ButtonProps> = ({
   primary,
@@ -23,6 +24,6 @@ const Button: FC<ButtonProps> = ({
     >
       {children}
     </Link>
-  );
-};
-export default Button;
+  )
+}
+export default Button
