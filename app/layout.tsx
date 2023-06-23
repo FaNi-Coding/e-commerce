@@ -1,19 +1,19 @@
-import { Manrope } from 'next/font/google';
+import { Manrope } from 'next/font/google'
 
-import './globals.css';
+import './globals.css'
 
-const manrope = Manrope({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'E-commerce 2.0',
   description:
     'E-commerce 2.0 is a demo e-commerce site built with Next.js and TypeScript.',
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang='en'>
@@ -23,5 +23,5 @@ export default function RootLayout({
         <footer>Footer Section</footer>
       </body>
     </html>
-  );
+  )
 }
