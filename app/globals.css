@@ -68,13 +68,13 @@
 
 @layer components {
   .btn-primary {
-    @apply py-6 px-12 text-white font-bold bg-primary;
+    @apply py-6 px-12 text-white font-bold bg-primary max-w-max;
   }
   .btn-secondary {
-    @apply py-6 px-12 text-black bg-white font-bold border-black border;
+    @apply py-6 px-12 text-black bg-white font-bold border-black border max-w-max;
   }
   .btn-tertiary {
-    @apply py-6 px-12 text-black bg-white font-bold flex items-center justify-center gap-x-3;
+    @apply py-6 px-12 text-black bg-white font-bold flex items-center justify-center gap-x-3 max-w-max;
   }
 }
 
@@ -129,7 +129,7 @@ main {
 a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
-  display: inline-block;
+  display: inline;
 }
 a:not([class]) {
   text-decoration-skip-ink: auto;
