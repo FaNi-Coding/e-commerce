@@ -15,6 +15,9 @@ export default function Home() {
           store to meet some of the fantastic people who make Audiophile the
           best place to buy your portable audio equipment.
         </p>
+        <Button primary isMargin>
+          SEE PRODUCT
+        </Button>
       </Article>
       <ImageComp src={''} alt={''} />
     </Container>

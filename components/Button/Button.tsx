@@ -20,7 +20,7 @@ const Button: FC<ButtonProps> = ({
 
   const buttonStyles = isMargin && 'mt-8';
   return (
-    <Link href='#' className={`${buttonGlobals} + ${buttonStyles}`}>
+    <Link href='#' className={`${buttonGlobals} ${buttonStyles}`}>
       {children}
     </Link>
   );
