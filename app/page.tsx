@@ -1,10 +1,22 @@
 import Container from '@/components/Container/Container';
-import Button from '../components/Button/Button';
+import Article from '@/components/Article/Article';
+import ImageComp from '@/components/Image/ImageComp';
+import Button from '@/components/Button/Button';
 export default function Home() {
   return (
     <Container>
-      <h1>Home</h1>
-      <Button primary>SEE PRODUCT</Button>
+      <Article>
+        <h3>Bringing you the best audio gear</h3>
+        <p>
+          Located at the heart of New York City, Audiophile is the premier store
+          for high end headphones, earphones, speakers, and audio accessories.
+          We have a large showroom and luxury demonstration rooms available for
+          you to browse and experience a wide range of our products. Stop by our
+          store to meet some of the fantastic people who make Audiophile the
+          best place to buy your portable audio equipment.
+        </p>
+      </Article>
+      <ImageComp src={''} alt={''} />
     </Container>
   );
 }
