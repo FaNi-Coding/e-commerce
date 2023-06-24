@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { maxWidthContainerStyles } from './styled';
 import { ContainerProps } from './containerTypes';
 
