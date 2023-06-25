@@ -3,7 +3,7 @@ import Article from '@/components/Article/Article';
 import ImageComp from '@/components/Image/ImageComp';
 export default function Home() {
   return (
-    <Container colReverse>
+    <Container className='col-reverse row-laptop'>
       <Article>
         <h3>Bringing you the best audio gear</h3>
         <p>

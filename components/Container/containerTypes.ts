@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export type ContainerProps = {
-  rowReverse?: boolean;
-  colReverse?: boolean;
+  className?: string;
+  bgColor?: string;
   children: ReactNode;
 };
