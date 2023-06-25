@@ -1,10 +1,9 @@
 import Container from '@/components/Container/Container';
 import Article from '@/components/Article/Article';
 import ImageComp from '@/components/Image/ImageComp';
-import Button from '@/components/Button/Button';
 export default function Home() {
   return (
-    <Container>
+    <Container colReverse>
       <Article>
         <h3>Bringing you the best audio gear</h3>
         <p>
@@ -15,9 +14,6 @@ export default function Home() {
           store to meet some of the fantastic people who make Audiophile the
           best place to buy your portable audio equipment.
         </p>
-        <Button primary isMargin>
-          SEE PRODUCT
-        </Button>
       </Article>
       <ImageComp src={''} alt={''} />
     </Container>
