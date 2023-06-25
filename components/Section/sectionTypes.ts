@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type ContainerProps = {
+export type SectionProps = {
   className?: string;
   bgColor?: string;
   children: ReactNode;

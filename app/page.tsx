@@ -1,9 +1,10 @@
-import Container from '@/components/Container/Container';
+import Section from '@/components/Section/Section';
 import Article from '@/components/Article/Article';
 import ImageComp from '@/components/Image/ImageComp';
+import Nav from '@/components/Nav/Nav';
 export default function Home() {
   return (
-    <Container className='col-reverse row-laptop'>
+    <Section className='max-width-container col-reverse row-laptop'>
       <Article>
         <h3>Bringing you the best audio gear</h3>
         <p>
@@ -16,6 +17,6 @@ export default function Home() {
         </p>
       </Article>
       <ImageComp src={''} alt={''} />
-    </Container>
+    </Section>
   );
 }
