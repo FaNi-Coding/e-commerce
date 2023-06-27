@@ -1,4 +1,4 @@
-export const ImageWrapper = 'relative w-full md:w-1/2';
+export const ImageWrapper = 'relative w-full';
 
 export const ImageStyles = {
   width: '100%',

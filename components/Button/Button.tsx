@@ -18,9 +18,9 @@ const Button: FC<ButtonProps> = ({
     ? 'btn-tertiary'
     : '';
 
-  const buttonStyles = isMargin && 'mt-8';
+  const buttonTopMargin = isMargin && 'mt-8';
   return (
-    <Link href='#' className={`${buttonGlobals} ${buttonStyles}`}>
+    <Link href='#' className={`${buttonGlobals} ${buttonTopMargin}`}>
       {children}
     </Link>
   );

@@ -64,16 +64,23 @@
     line-height: 2.5rem;
     font-weight: 500;
   }
+
+  .buttonText {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    line-height: auto;
+    font-weight: 700;
+  }
 }
 @layer components {
   .btn-primary {
-    @apply py-6 px-12 text-white font-bold bg-primary max-w-max;
+    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText;
   }
   .btn-secondary {
-    @apply py-6 px-12 text-black bg-white font-bold border-black border max-w-max;
+    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText;
   }
   .btn-tertiary {
-    @apply py-6 px-12 text-black bg-white font-bold flex items-center justify-center gap-x-3 max-w-max;
+    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold flex items-center justify-center gap-x-3 max-w-max buttonText;
   }
   .col-reverse {
     @apply flex-col-reverse;
@@ -85,10 +92,13 @@
     @apply md:flex-row;
   }
   .max-width-container {
-    @apply container flex justify-between gap-[4rem] mx-auto py-8 md:gap-[6.3rem] md:p-0 md:gap-[12.5rem] lg:py-40 xl:max-w-7xl;
+    @apply container flex justify-between mx-auto gap-[4rem]  py-8 md:gap-[6.3rem] md:p-0 lg:gap-[12.5rem] lg:py-40 lg:min-w-[110rem]  xl:max-w-7xl;
   }
   .max-width-container-no-padding {
-    @apply container p-0 flex justify-between gap-[4rem] mx-auto md:gap-[6.3rem] md:gap-[12.5rem] xl:max-w-7xl;
+    @apply container p-0 flex justify-between mx-auto gap-[4rem]  md:gap-[6.3rem] lg:gap-[12.5rem] lg:min-w-[110rem] xl:max-w-7xl;
+  }
+  .clipImg {
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0 97%);
   }
 }
 

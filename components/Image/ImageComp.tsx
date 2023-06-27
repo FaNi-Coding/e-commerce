@@ -1,21 +1,22 @@
 import { FC } from 'react';
-import Image from 'next/image';
-import Bitmap from '../../assets/Bitmap.png';
+import Image, { StaticImageData } from 'next/image';
+
 import { ImageStyles, ImageWrapper } from './styled';
 
 type Props = {
-  src: string;
+  src: StaticImageData;
   alt: string;
+  wrapperStyles?: string;
 };
-const ImageComp: FC<Props> = ({ src, alt }) => {
+const ImageComp: FC<Props> = ({ src, alt, wrapperStyles }) => {
   return (
-    <div className={ImageWrapper}>
+    <div className={`${ImageWrapper} ${wrapperStyles}`}>
       <Image
-        src={Bitmap}
+        src={src}
         style={ImageStyles}
         /*  sizes={`(min-width: ${dimensions.laptop}) 40vw, 100vw`} */
         placeholder='blur'
-        alt='dic'
+        alt={alt}
       />
     </div>
   );
