@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import Bitmap from '../../assets/images/Bitmap.png';
+import Bitmap from '../../assets/Bitmap.png';
 import { ImageStyles, ImageWrapper } from './styled';
 
 type Props = {
