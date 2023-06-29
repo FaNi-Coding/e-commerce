@@ -92,13 +92,16 @@
     @apply md:flex-row;
   }
   .max-width-container {
-    @apply container flex justify-between mx-auto gap-[4rem]  py-8 md:gap-[6.3rem] md:p-0 lg:gap-[12.5rem] lg:py-40 lg:min-w-[110rem]  xl:max-w-7xl;
+    @apply container flex justify-between mx-auto gap-[4rem] py-8 md:gap-[6.3rem] md:py-[9.6rem] lg:gap-[12.5rem] lg:py-40 lg:min-w-[110rem]  xl:max-w-7xl;
   }
   .max-width-container-no-padding {
     @apply container p-0 flex justify-between mx-auto gap-[4rem]  md:gap-[6.3rem] lg:gap-[12.5rem] lg:min-w-[110rem] xl:max-w-7xl;
   }
-  .clipImg {
-    clip-path: polygon(0 0, 100% 0, 100% 97%, 0 97%);
+
+  @media (min-width: 1024px) {
+    .clipZX9Img {
+      clip-path: polygon(0 0, 100% 0, 100% 97%, 0 97%);
+    }
   }
 }
 

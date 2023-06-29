@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export type SectionProps = {
-  className?: string;
+  dynamicStyles?: string;
   bgColor?: string;
   children: ReactNode;
 };

@@ -1,11 +1,10 @@
 import { FC } from 'react';
-import { maxWidthContainerStyles } from './styled';
 import { SectionProps } from './sectionTypes';
 
-const Section: FC<SectionProps> = ({ children, bgColor, className }) => {
+const Section: FC<SectionProps> = ({ children, bgColor, dynamicStyles }) => {
   return (
     <div className={`bg-${bgColor}` || 'bg-white'}>
-      <section className={className}>{children}</section>
+      <section className={dynamicStyles}>{children}</section>
     </div>
   );
 };

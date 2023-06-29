@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { FC } from 'react';
-import { ArticleBasicStyles } from './styled';
+import * as styles from './styles';
 
 type Props = {
   dynamicStyles?: string;
@@ -9,9 +9,7 @@ type Props = {
 
 const Article: FC<Props> = ({ children, dynamicStyles }) => {
   return (
-    <article className={`${ArticleBasicStyles} ${dynamicStyles}`}>
-      {children}
-    </article>
+    <article className={`${styles.Basic} ${dynamicStyles}`}>{children}</article>
   );
 };
 export default Article;
