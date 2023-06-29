@@ -6,16 +6,11 @@ import Link from 'next/link';
 import Logo from '../Icons/Logo';
 import Cart from '../Icons/Cart';
 import Hamburger from '../Icons/Hamburger';
+import { navLinks } from './navLinks';
+import HamburgerNav from './HamburgerNav';
 /* import * as styles from './styles.ts';
  */
 type Props = {};
-
-const navLinks = [
-  { href: '/', name: 'Home' },
-  { href: '/headphones', name: 'Headphones' },
-  { href: '/speakers', name: 'Speakers' },
-  { href: '/earphones', name: 'Earphones' },
-];
 
 const Nav: FC<Props> = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,8 +30,8 @@ const Nav: FC<Props> = ({}) => {
       <>
         {isOpen && (
           <div className='absolute top-[9.6rem] left-0 h-[100vh] w-full z-10 opacityBlack'>
-            <div className=' flex flex-col gap bg-primary h-[75vh] w-full'>
-              ALO
+            <div className=' flex flex-col gap-[1-6rem] bg-primary h-[75vh] w-full px-[2.4rem] py-[3.2rem]'>
+              <HamburgerNav />
             </div>
           </div>
         )}
