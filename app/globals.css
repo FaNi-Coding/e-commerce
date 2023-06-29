@@ -173,3 +173,7 @@ select {
     clip-path: polygon(0 0, 100% 0, 100% 97%, 0 97%);
   }
 }
+
+.opacityBlack {
+  background-color: rgba(0, 0, 0, 0.8);
+}
