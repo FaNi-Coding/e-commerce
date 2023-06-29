@@ -97,12 +97,6 @@
   .max-width-container-no-padding {
     @apply container p-0 flex justify-between mx-auto gap-[4rem]  md:gap-[6.3rem] lg:gap-[12.5rem] lg:min-w-[110rem] xl:max-w-7xl;
   }
-
-  @media (min-width: 1024px) {
-    .clipZX9Img {
-      clip-path: polygon(0 0, 100% 0, 100% 97%, 0 97%);
-    }
-  }
 }
 
 /**
@@ -172,4 +166,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+@media (min-width: 1024px) {
+  .clipZX9Img {
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0 97%);
+  }
 }

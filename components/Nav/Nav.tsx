@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Section from '../Section/Section';
 import Link from 'next/link';
-/* import {} from './styles'; */
 
 type Props = {};
 
