@@ -1,14 +1,16 @@
-import Link from 'next/link';
-import { FC } from 'react';
+import Link from 'next/link'
+import { FC } from 'react'
 
-import { ButtonProps } from './buttonTypes';
+import { ButtonProps } from './buttonTypes'
 
 const Button: FC<ButtonProps> = ({
   primary,
   secondary,
   tertiary,
   isMargin,
+  href,
   children,
+  dynamicStyles,
 }) => {
   const buttonGlobals = primary
     ? 'btn-primary'
@@ -16,13 +18,16 @@ const Button: FC<ButtonProps> = ({
     ? 'btn-secondary'
     : tertiary
     ? 'btn-tertiary'
-    : '';
+    : ''
 
-  const buttonTopMargin = isMargin && 'mt-8';
+  const buttonTopMargin = isMargin && 'mt-8'
   return (
-    <Link href='#' className={`${buttonGlobals} ${buttonTopMargin}`}>
+    <Link
+      href={href || ''}
+      className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
+    >
       {children}
     </Link>
-  );
-};
-export default Button;
+  )
+}
+export default Button

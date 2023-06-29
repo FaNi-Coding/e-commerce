@@ -1,9 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 export type ButtonProps = {
-  primary?: boolean;
-  secondary?: boolean;
-  tertiary?: boolean;
-  isMargin?: boolean;
-  children?: ReactNode;
-};
+  primary?: boolean
+  secondary?: boolean
+  tertiary?: boolean
+  isMargin?: boolean
+  href?: string
+  children?: ReactNode
+  dynamicStyles?: string
+}
