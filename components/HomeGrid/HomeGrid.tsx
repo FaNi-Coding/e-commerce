@@ -9,6 +9,7 @@ import ZX7 from '../../assets/home/desktop/image-speaker-zx7.jpg';
 import ZX9 from '../../assets/home/desktop/image-speaker-zx9.png';
 import YX1 from '../../assets/home/desktop/image-earphones-yx1.jpg';
 import * as styles from './styles';
+import Circles from '../Icons/Circles';
 
 type Props = {};
 const HomeGrid: FC<Props> = () => {
@@ -16,13 +17,14 @@ const HomeGrid: FC<Props> = () => {
     <>
       <Section dynamicStyles='max-width-container grid grid-cols-1  md:gap-[4.8rem]'>
         <div className={styles.FirstGridWrapper}>
+          <Circles />
           <BasicImageComp
             src={ZX9}
             alt='dic'
-            dynamicWrapperStyles='w-1/3 lg:ml-auto  lg:mb-[-1.25rem] clipZX9Img'
+            dynamicWrapperStyles='w-1/3 pt-[5.5rem] md:pt-[5.2rem] lg:pt-0 lg:ml-auto  lg:mb-[-7.8rem] clipZX9Img'
             sizes={`${responsive.laptop} 20vw, 100vw`}
           />
-          <Article dynamicStyles='max-w-[35rem] mx-auto text-center items-center lg:pb-0 lg:items-start lg:text-left'>
+          <Article dynamicStyles='max-w-[35rem] mx-auto text-center items-center lg:items-start lg:text-left lg:py-[7rem]'>
             <h1>ZX9 SPEAKER</h1>
             <p>
               Upgrade to premium speakers that are phenomenally built to deliver
