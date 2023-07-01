@@ -1,14 +1,13 @@
-import { hamburgerLinks } from './navLinks'
 import { StaticImageData } from 'next/image'
+import Link from 'next/link'
 import { FC } from 'react'
 
 import Button from '../Button/Button'
 import Chevron from '../Icons/Chevron'
 import ImageComp from '../Image/BasicImageComp'
-import Link from 'next/link'
+import { hamburgerLinks } from './navLinks'
+import * as styles from './styles'
 
-/* import * as styles from './styles.ts';
- */
 type HamburgerLinkProps = {
   name: string
   img: StaticImageData
@@ -18,24 +17,21 @@ type Props = {}
 const HamburgerNav: FC<Props> = () => {
   const hamburgerCards = hamburgerLinks.map(
     ({ name, img, href }: HamburgerLinkProps) => (
-      <article
-        key={name}
-        className='relative flex flex-col justify-center items-center h-full'
-      >
-        <div className='w-[11rem] h-[11rem] mb-[-5.5rem]'>
-          <ImageComp src={img} alt='alo' />
+      <section key={name} className={styles.Section}>
+        <div className={styles.ImageWrapper}>
+          <ImageComp src={img} alt={name} />
         </div>
 
-        <div className='h-full bg-[#33333320] rounded-md  w-full grid place-items-center '>
-          <div className='grid place-items-center pt-[6rem] pb-[2.2rem]'>
-            <p className='body uppercase max-h-max'>{name}</p>
-            <Button tertiary href={href} dynamicStyles='max-h-max"'>
+        <article className={styles.Article}>
+          <div className={styles.ArticleContainer}>
+            <p className={styles.Body}>{name}</p>
+            <Button tertiary href={href} dynamicStyles='max-h-max'>
               Shop
               <Chevron />
             </Button>
           </div>
-        </div>
-      </article>
+        </article>
+      </section>
     )
   )
   return <>{hamburgerCards}</>

@@ -10,8 +10,8 @@ import HamburgerNav from './HamburgerNav'
 import { responsive } from '@/styles/responsive'
 import useMediaQuery from '@/hooks/useMediaQuery'
 
-/* import * as styles from './styles.ts';
- */
+import * as styles from './styles'
+
 type Props = {}
 
 const Nav: FC<Props> = ({}) => {
@@ -35,8 +35,8 @@ const Nav: FC<Props> = ({}) => {
     return (
       <>
         {isOpen && (
-          <div className='absolute top-[9.6rem] left-0 h-[100vh] w-full z-10 opacityBlack'>
-            <div className=' flex flex-col bg-tertiary h-[75vh] w-full px-[2.4rem] py-[3.2rem] gap-[1rem] overflow-scroll'>
+          <div className={styles.HamburgerOverlay}>
+            <div className={styles.MobileNavBackground}>
               <HamburgerNav />
             </div>
           </div>
@@ -45,25 +45,24 @@ const Nav: FC<Props> = ({}) => {
     )
   }
 
-  const navList = navLinks.map((link) => (
-    <li key={link.name}>
-      <Link href={link.href}>{link.name}</Link>
+  const navList = navLinks.map(({ name, href }) => (
+    <li key={name}>
+      <Link href={href}>{name}</Link>
     </li>
   ))
 
   return (
-    <Section dynamicStyles='max-width-container-no-padding relative'>
-      <nav className='hidden lg:flex h-[9.6rem] justify-between items-center w-full text-white'>
+    <Section
+      bgColor='black'
+      dynamicStyles='max-width-container-no-padding relative'
+    >
+      <nav className={styles.Nav}>
         <Logo />
-        <ul className='flex-column sm:flex gap-[3.4rem]'>{navList}</ul>
+        <ul className={styles.NavList}>{navList}</ul>
         <Cart />
       </nav>
-      <nav
-        className={
-          'lg:hidden flex h-[9.6rem] justify-between items-center w-full text-white px-[2.4rem] md:px-[4rem]'
-        }
-      >
-        <div className='flex gap-[4.2rem] items-center w-full '>
+      <nav className={styles.MobileNav}>
+        <div className={styles.NavWrapper}>
           <Hamburger onClick={toggleHamburger} />
           <Logo />
         </div>
