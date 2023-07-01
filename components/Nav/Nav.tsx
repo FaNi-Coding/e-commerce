@@ -1,33 +1,75 @@
-import { FC } from 'react';
-import Section from '../Section/Section';
-import Link from 'next/link';
+'use client'
+import { FC, useEffect, useState } from 'react'
+import Section from '../Section/Section'
+import Link from 'next/link'
+import Logo from '../Icons/Logo'
+import Cart from '../Icons/Cart'
+import Hamburger from '../Icons/Hamburger'
+import { navLinks } from './navLinks'
+import HamburgerNav from './HamburgerNav'
+import { responsive } from '@/styles/responsive'
+import useMediaQuery from '@/hooks/useMediaQuery'
 
-type Props = {};
+import * as styles from './styles'
 
-const navLinks = [
-  { href: '/', name: 'Home' },
-  { href: '/headphones', name: 'Headphones' },
-  { href: '/speakers', name: 'Speakers' },
-  { href: '/earphones', name: 'Earphones' },
-];
+type Props = {}
 
 const Nav: FC<Props> = ({}) => {
+  const isTabletL = useMediaQuery(responsive.tabletL)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleHamburger = () => {
+    setIsOpen((prev) => !prev)
+  }
+
+  useEffect(() => {
+    if (isTabletL) {
+      setIsOpen(false)
+    }
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else document.body.style.overflow = 'unset'
+  }, [isOpen, isTabletL])
+
+  const hamburgerMenu = () => {
+    return (
+      <>
+        {isOpen && (
+          <div className={styles.HamburgerOverlay}>
+            <div className={styles.MobileNavBackground}>
+              <HamburgerNav />
+            </div>
+          </div>
+        )}
+      </>
+    )
+  }
+
+  const navList = navLinks.map(({ name, href }) => (
+    <li key={name}>
+      <Link href={href}>{name}</Link>
+    </li>
+  ))
+
   return (
-    <Section dynamicStyles='max-width-container-no-padding'>
-      <nav className='h-[9.6rem] flex justify-between items-center w-full text-white'>
-        <div className=''>LOGO{/* <image src='' alt='' /> */}</div>
-        <ul className='flex-column sm:flex gap-[3.4rem] '>
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <Link href={link.href}>{link.name}</Link>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          <li>kundvagn</li>
-        </ul>
+    <Section
+      bgColor='black'
+      dynamicStyles='max-width-container-no-padding relative'
+    >
+      <nav className={styles.Nav}>
+        <Logo />
+        <ul className={styles.NavList}>{navList}</ul>
+        <Cart />
       </nav>
+      <nav className={styles.MobileNav}>
+        <div className={styles.NavWrapper}>
+          <Hamburger onClick={toggleHamburger} />
+          <Logo />
+        </div>
+        <Cart />
+      </nav>
+      {hamburgerMenu()}
     </Section>
-  );
-};
-export default Nav;
+  )
+}
+export default Nav

@@ -1,11 +1,11 @@
-import { FC } from 'react';
-import Section from '../Section/Section';
-import Article from '../Article/Article';
-import BasicImageComp from '../Image/BasicImageComp';
-import Bitmap from '../../assets/Bitmap.png';
-import { responsive } from '@/styles/responsive';
+import { FC } from 'react'
+import Section from '../Section/Section'
+import Article from '../Article/Article'
+import BasicImageComp from '../Image/BasicImageComp'
+import Bitmap from '../../assets/Bitmap.png'
+import { responsive } from '@/styles/responsive'
 
-type Props = {};
+type Props = {}
 const AboutSection: FC<Props> = () => {
   return (
     <Section dynamicStyles='max-width-container col-reverse row-laptop'>
@@ -27,6 +27,6 @@ const AboutSection: FC<Props> = () => {
         sizes={`${responsive.laptop} 40vw, 100vw`}
       />
     </Section>
-  );
-};
-export default AboutSection;
+  )
+}
+export default AboutSection

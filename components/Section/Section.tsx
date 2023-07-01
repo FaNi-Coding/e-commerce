@@ -1,11 +1,12 @@
-import { FC } from 'react';
-import { SectionProps } from './sectionTypes';
+import { FC } from 'react'
+
+import { SectionProps } from './sectionTypes'
 
 const Section: FC<SectionProps> = ({ children, bgColor, dynamicStyles }) => {
   return (
-    <div className={`bg-${bgColor}` || 'bg-white'}>
+    <div className={`bg-${bgColor ?? 'white'}`}>
       <section className={dynamicStyles}>{children}</section>
     </div>
-  );
-};
-export default Section;
+  )
+}
+export default Section
