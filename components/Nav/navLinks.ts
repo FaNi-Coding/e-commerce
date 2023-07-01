@@ -1,4 +1,4 @@
-import Headphones from '../../assets/shared/desktop/image-category-thumbnail-headPhones.png'
+import Headphones from '../../assets/shared/desktop/image-category-thumbnail-headphones.png'
 import Earphones from '../../assets/shared/desktop/image-category-thumbnail-earphones.png'
 import Speakers from '../../assets/shared/desktop/image-category-thumbnail-earphones.png'
 
