@@ -11,7 +11,7 @@ const Footer = (props: Props) => {
   return (
     <Section
     bgColor='bg-black'
-    dynamicStyles='max-width-container relative'
+    dynamicStyles='container flex justify-between gap-[4.8rem] mx-auto py-3.8 md:gap-[3.2rem] md:py-[4.6rem] lg:py-[4.8rem] lg:gap-[3.6rem] relative'
   >
    <footer className='hidden md:hidden lg:flex lg:flex-col gap-[4rem] w-full'>
         <Nav />
