@@ -14,7 +14,7 @@ type HamburgerLinkProps = {
   href: string
 }
 type Props = {}
-const HamburgerNav: FC<Props> = () => {
+const HamburgerNavItems: FC<Props> = () => {
   const hamburgerCards = hamburgerLinks.map(
     ({ name, img, href }: HamburgerLinkProps) => (
       <section key={name} className={styles.Section}>
@@ -36,4 +36,4 @@ const HamburgerNav: FC<Props> = () => {
   )
   return <>{hamburgerCards}</>
 }
-export default HamburgerNav
+export default HamburgerNavItems
