@@ -2,6 +2,8 @@ import { Manrope } from 'next/font/google';
 
 import './globals.css';
 import Nav from '@/components/Nav/Nav';
+import MobileNav from '@/components/Nav/MobileNav';
+import Cart from '@/components/Icons/Cart';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -20,7 +22,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className={manrope.className}>
         <header>
-          <Nav />
+          <Nav icon={<Cart />}>
+            <MobileNav />
+          </Nav>
         </header>
         <main>{children}</main>
         <footer>Footer Section</footer>

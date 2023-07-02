@@ -1,49 +1,22 @@
-'use client'
-import { FC, useEffect, useState } from 'react'
+import { FC, ReactNode } from 'react'
 import Section from '../Section/Section'
 import Link from 'next/link'
 import Logo from '../Icons/Logo'
-import Cart from '../Icons/Cart'
-import Hamburger from '../Icons/Hamburger'
+
+
 import { navLinks } from './navLinks'
-import HamburgerNav from './HamburgerNav'
-import { responsive } from '@/styles/responsive'
-import useMediaQuery from '@/hooks/useMediaQuery'
+
 
 import * as styles from './styles'
 
-type Props = {}
 
-const Nav: FC<Props> = ({}) => {
-  const isTabletL = useMediaQuery(responsive.tabletL)
-  const [isOpen, setIsOpen] = useState(false)
+type Props = {
+children:ReactNode
+icon: ReactNode
+}
 
-  const toggleHamburger = () => {
-    setIsOpen((prev) => !prev)
-  }
+const Nav: FC<Props> = ({children, icon}) => {
 
-  useEffect(() => {
-    if (isTabletL) {
-      setIsOpen(false)
-    }
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else document.body.style.overflow = 'unset'
-  }, [isOpen, isTabletL])
-
-  const hamburgerMenu = () => {
-    return (
-      <>
-        {isOpen && (
-          <div className={styles.HamburgerOverlay}>
-            <div className={styles.MobileNavBackground}>
-              <HamburgerNav />
-            </div>
-          </div>
-        )}
-      </>
-    )
-  }
 
   const navList = navLinks.map(({ name, href }) => (
     <li key={name}>
@@ -59,16 +32,9 @@ const Nav: FC<Props> = ({}) => {
       <nav className={styles.Nav}>
         <Logo />
         <ul className={styles.NavList}>{navList}</ul>
-        <Cart />
+        {icon}
       </nav>
-      <nav className={styles.MobileNav}>
-        <div className={styles.NavWrapper}>
-          <Hamburger onClick={toggleHamburger} />
-          <Logo />
-        </div>
-        <Cart />
-      </nav>
-      {hamburgerMenu()}
+  {children}
     </Section>
   )
 }
