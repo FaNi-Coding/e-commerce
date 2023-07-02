@@ -4,6 +4,7 @@ import './globals.css';
 import Nav from '@/components/Nav/Nav';
 import MobileNav from '@/components/Nav/MobileNav';
 import Cart from '@/components/Icons/Cart';
+import Footer from '@/components/Footer/Footer';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
           </Nav>
         </header>
         <main>{children}</main>
-        <footer>Footer Section</footer>
+        <Footer />
       </body>
     </html>
   );

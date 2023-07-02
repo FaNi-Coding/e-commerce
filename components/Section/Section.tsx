@@ -4,7 +4,7 @@ import { SectionProps } from './sectionTypes'
 
 const Section: FC<SectionProps> = ({ children, bgColor, dynamicStyles }) => {
   return (
-    <div className={`bg-${bgColor ?? 'white'}`}>
+    <div className={`${bgColor || "white"}`}>
       <section className={dynamicStyles}>{children}</section>
     </div>
   )

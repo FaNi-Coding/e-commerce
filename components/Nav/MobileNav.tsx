@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react'
 import Hamburger from '../Icons/Hamburger'
 import { responsive } from '@/styles/responsive'
 import useMediaQuery from '@/hooks/useMediaQuery'
-import HamburgerNav from './HamburgerNav'
+import HamburgerNavItems from './HamburgerNavItems'
 import * as styles from './styles'
 import Cart from '../Icons/Cart'
 import Logo from '../Icons/Logo'
@@ -33,7 +33,7 @@ const MobileNav:FC = () => {
           {isOpen && (
             <div className={styles.HamburgerOverlay}>
               <div className={styles.MobileNavBackground}>
-                <HamburgerNav />
+                <HamburgerNavItems />
               </div>
             </div>
           )}

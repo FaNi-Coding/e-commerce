@@ -11,8 +11,8 @@ import * as styles from './styles'
 
 
 type Props = {
-children:ReactNode
-icon: ReactNode
+children?:ReactNode
+icon?: ReactNode
 }
 
 const Nav: FC<Props> = ({children, icon}) => {
@@ -26,7 +26,7 @@ const Nav: FC<Props> = ({children, icon}) => {
 
   return (
     <Section
-      bgColor='black'
+      bgColor='bg-black'
       dynamicStyles='max-width-container-no-padding relative'
     >
       <nav className={styles.Nav}>
