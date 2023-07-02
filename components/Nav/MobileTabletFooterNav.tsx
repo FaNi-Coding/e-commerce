@@ -6,7 +6,7 @@ import * as styles from './styles'
 
 type Props = {}
 
-const FooterTabletNav = (props: Props) => {
+const MobileTabletFooterNav = (props: Props) => {
 
     const navList = navLinks.map(({ name, href }) => (
         <li key={name}>
@@ -15,11 +15,11 @@ const FooterTabletNav = (props: Props) => {
       ))
 
   return (
-  <nav className="flex flex-col gap-[4rem]">
+  <nav className="flex items-center md:items-start flex-col gap-[4rem]">
  <Logo />
- <ul className="flex gap-[3rem] w-full text-white uppercase">{navList}</ul>
+ <ul className="flex flex-col items-center md:flex-row md:items-start gap-[3rem] w-full text-white uppercase">{navList}</ul>
   </nav>
   )
 }
 
-export default FooterTabletNav
+export default MobileTabletFooterNav
