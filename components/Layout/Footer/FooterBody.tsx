@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 import Nav from '../Nav/Nav'
-import Section from '../Section/Section'
+import Section from '../../UI/Section/Section'
 
 type Props = {
     children?: ReactNode

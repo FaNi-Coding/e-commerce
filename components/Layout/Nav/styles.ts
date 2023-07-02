@@ -11,12 +11,12 @@ export const MobileNavBackground =
   'flex flex-col bg-tertiary h-[75vh] w-full px-[2.4rem] py-[3.2rem] gap-[1rem] overflow-scroll'
 
 export const Section =
-  'relative flex flex-col justify-center items-center h-full'
+  'relative flex flex-col justify-center items-center h-full w-full md:justify-between md:mx-auto lg:max-w-[35rem]'
 
 export const ImageWrapper = 'w-[11rem] h-[11rem] mb-[-5.5rem]'
 
 export const Article =
-  'h-full bg-[#33333320] rounded-md  w-full grid place-items-center '
+  'h-full bg-[#33333320] rounded-md  w-full grid place-items-center'
 
 export const ArticleContainer = 'grid place-items-center pt-[6rem] pb-[2.2rem]'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../Icons/Logo'
+import Logo from '../../Icons/Logo'
 import Link from 'next/link'
 import { navLinks } from './navLinks'
 import * as styles from './styles'

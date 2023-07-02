@@ -1,9 +1,9 @@
 import React, {FC, ReactNode} from 'react'
-import Nav from '../Nav/Nav'
-import Section from '../Section/Section'
-import Facebook from '../Icons/Facebook'
-import Twitter from '../Icons/Twitter'
-import Instagram from '../Icons/Instagram'
+import Nav from '../../Layout/Nav/Nav'
+import Section from '../../UI/Section/Section'
+import Facebook from '../Facebook'
+import Twitter from '../Twitter'
+import Instagram from '../Instagram'
 
 type Props = {
 

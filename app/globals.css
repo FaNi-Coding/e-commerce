@@ -86,10 +86,10 @@
     @apply flex-col-reverse;
   }
   .row-reverse-laptop {
-    @apply md:flex-row-reverse;
+    @apply lg:flex-row-reverse;
   }
   .row-laptop {
-    @apply md:flex-row;
+    @apply lg:flex-row;
   }
   .max-width-container {
     @apply container flex justify-between mx-auto gap-[4rem] py-8 md:gap-[6.3rem] md:py-[9.6rem] lg:gap-[12.5rem] lg:py-40;
