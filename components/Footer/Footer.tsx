@@ -13,14 +13,14 @@ const Footer = (props: Props) => {
     bgColor='bg-black'
     dynamicStyles='max-width-container relative'
   >
-{    <footer className='hidden md:hidden w-full lg:flex lg:flex-col gap-[4rem]'>
+   <footer className='hidden md:hidden lg:flex lg:flex-col gap-[4rem] w-full'>
         <Nav />
         <FooterBody> 
             <SocialMediaIcons />
         </FooterBody>
         <p className='body text-white'>Copyright 2021. All Rights Reserved</p>
-    </footer>  } 
-    <footer className='hidden w-full md:flex md:flex-col gap-[4rem] lg:hidden'>
+    </footer>  
+    <footer className='hidden  md:flex md:flex-col gap-[4rem] lg:hidden w-full'>
         <MobileTabletFooterNav />
         <FooterBody />
         <div className='flex justify-between'>
@@ -28,7 +28,7 @@ const Footer = (props: Props) => {
         <SocialMediaIcons />
         </div>
     </footer>   
-    <footer className='w-full flex flex-col gap-[4rem] md:hidden lg:hidden'>
+    <footer className='flex flex-col gap-[4rem] md:hidden lg:hidden w-full '>
         <MobileTabletFooterNav />
         <FooterBody />
         <div className='flex flex-col justify-center items-center gap-[4rem]'>
