@@ -47,7 +47,7 @@ const HomeGrid: FC<Props> = () => {
         </div>
         <span className={styles.InlineGridWrapper}>
           <BasicImageComp src={YX1} alt='dic' dynamicWrapperStyles='w-full' />
-          <Article dynamicStyles='mr-auto pl-[2.4rem] md:pl-[4.15rem] lg:pl-[9.5rem] py-[10.1rem] w-full md:w-full bg-tertiary'>
+          <Article dynamicStyles='mr-auto pl-[2.4rem] md:pl-[4.15rem] lg:pl-[9.5rem] py-[10.1rem] w-full lg:w-full bg-tertiary'>
             <h4>YX1 EARPHONES</h4>
             <Button secondary>SEE PRODUCT</Button>
           </Article>
