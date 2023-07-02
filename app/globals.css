@@ -2,27 +2,178 @@
 @tailwind components;
 @tailwind utilities;
 
-/**
- * Light mode
- */
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  h1 {
+    font-size: 5.6rem;
+    line-height: 5.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 4.4rem;
+    letter-spacing: 0.15rem;
+  }
+  h3 {
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.115px;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+  }
+  h5 {
+    font-size: 2.4rem;
+    line-height: 3.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.17rem;
+    font-weight: 700;
+  }
+  h6 {
+    font-size: 1.8rem;
+    line-height: 1.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.13rem;
+    font-weight: 700;
+  }
+  .overline {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-weight: 400;
+  }
+  .subTitle {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+  }
+  body {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+  }
+
+  .buttonText {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    line-height: auto;
+    font-weight: 700;
+  }
+}
+@layer components {
+  .btn-primary {
+    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText;
+  }
+  .btn-secondary {
+    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText;
+  }
+  .btn-tertiary {
+    @apply px-[3rem] py-[1.5rem] text-black font-bold flex items-center justify-center gap-x-3 max-w-max buttonText;
+  }
+  .col-reverse {
+    @apply flex-col-reverse;
+  }
+  .row-reverse-laptop {
+    @apply lg:flex-row-reverse;
+  }
+  .row-laptop {
+    @apply lg:flex-row;
+  }
+  .max-width-container {
+    @apply container flex justify-between mx-auto gap-[4rem] py-8 md:gap-[6.3rem] md:py-[9.6rem] lg:gap-[12.5rem] lg:py-40;
+  }
+  .max-width-container-no-padding {
+    @apply container p-0 flex justify-between mx-auto gap-[4rem]  md:gap-[6.3rem] lg:gap-[12.5rem];
+  }
 }
 
 /**
- * Dark mode
- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-/**
  * Global styles
  */
+html {
+  font-size: 62.5%;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements, default styling will be removed */
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
 body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}
+
+header {
+  background-color: black;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+  display: inline;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (min-width: 1024px) {
+  .clipZX9Img {
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0 97%);
+  }
+}
+
+.opacityBlack {
+  background-color: rgba(0, 0, 0, 0.8);
 }

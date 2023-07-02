@@ -1,9 +1,13 @@
-import Image from 'next/image'
+import AboutSection from '@/components/UI/AboutSection/AboutSection'
+import HomeGrid from '@/components/Pages/Home/HomeGrid/HomeGrid'
+import CategoryLinksSection from '@/components/UI/CategoryLinksSection/CategoryLinksSection'
 
 export default function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <CategoryLinksSection />
+      <HomeGrid />
+      <AboutSection />
+    </>
   )
 }

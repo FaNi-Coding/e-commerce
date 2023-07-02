@@ -1,26 +1,35 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css';
+import Nav from '@/components/Layout/Nav/Nav';
+import MobileNav from '@/components/Layout/Nav/MobileNav';
+import Cart from '@/components/Icons/Cart';
+import Footer from '@/components/Layout/Footer/Footer';
+
+const manrope = Manrope({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'E-commerce 2.0',
   description:
     'E-commerce 2.0 is a demo e-commerce site built with Next.js and TypeScript.',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <header>Header Section</header>
+      <body className={manrope.className}>
+        <header>
+          <Nav icon={<Cart />} navHeight='h-[9.6rem]'>
+            <MobileNav />
+          </Nav>
+        </header>
         <main>{children}</main>
-        <footer>Footer Section</footer>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }
