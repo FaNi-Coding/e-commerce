@@ -1,8 +1,8 @@
 import React from 'react'
 import Nav from '../Nav/Nav'
-import Section from '../Section/Section'
+import Section from '../../UI/Section/Section'
 import FooterBody from './FooterBody'
-import SocialMediaIcons from '../SocialMediaIcons/SocialMediaIcons'
+import SocialMediaIcons from '../../Icons/SocialMediaIcons/SocialMediaIcons'
 import MobileTabletFooterNav from '../Nav/MobileTabletFooterNav'
 
 type Props = {}

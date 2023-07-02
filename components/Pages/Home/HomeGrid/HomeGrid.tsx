@@ -1,15 +1,16 @@
 import { FC } from 'react'
-import Section from '../Section/Section'
-import BasicImageComp from '../Image/BasicImageComp'
+import Section from '../../../UI/Section/Section'
+import BasicImageComp from '../../../UI/Image/BasicImageComp'
 import { responsive } from '@/styles/responsive'
-import Article from '../Article/Article'
-import Button from '../Button/Button'
-import CoverImageComp from '../Image/CoverImageComp'
-import ZX7 from '../../assets/home/desktop/image-speaker-zx7.jpg'
-import ZX9 from '../../assets/home/desktop/image-speaker-zx9.png'
-import YX1 from '../../assets/home/desktop/image-earphones-yx1.jpg'
+
+import CoverImageComp from '../../../UI/Image/CoverImageComp'
+import ZX7 from '../../../../assets/home/desktop/image-speaker-zx7.jpg'
+import ZX9 from '../../../../assets/home/desktop/image-speaker-zx9.png'
+import YX1 from '../../../../assets/home/desktop/image-earphones-yx1.jpg'
 import * as styles from './styles'
-import Circles from '../Icons/Circles'
+import Circles from '../../../Icons/Circles'
+import Article from '@/components/UI/Article/Article'
+import Button from '@/components/UI/Button/Button'
 
 type Props = {}
 const HomeGrid: FC<Props> = () => {

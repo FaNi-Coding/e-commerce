@@ -1,10 +1,10 @@
 import { Manrope } from 'next/font/google';
 
 import './globals.css';
-import Nav from '@/components/Nav/Nav';
-import MobileNav from '@/components/Nav/MobileNav';
+import Nav from '@/components/Layout/Nav/Nav';
+import MobileNav from '@/components/Layout/Nav/MobileNav';
 import Cart from '@/components/Icons/Cart';
-import Footer from '@/components/Footer/Footer';
+import Footer from '@/components/Layout/Footer/Footer';
 
 const manrope = Manrope({ subsets: ['latin'] });
 

@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import Section from '../Section/Section'
-import Article from '../Article/Article'
 import BasicImageComp from '../Image/BasicImageComp'
-import Bitmap from '../../assets/Bitmap.png'
+import Bitmap from '../../../assets/Bitmap.png'
 import { responsive } from '@/styles/responsive'
+import Article from '../Article/Article'
 
 type Props = {}
 const AboutSection: FC<Props> = () => {

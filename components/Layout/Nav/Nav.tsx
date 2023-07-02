@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react'
-import Section from '../Section/Section'
+import Section from '../../UI/Section/Section'
 import Link from 'next/link'
-import Logo from '../Icons/Logo'
+import Logo from '../../Icons/Logo'
 
 
 import { navLinks } from './navLinks'

@@ -1,13 +1,13 @@
 'use client'
 
 import { FC, useEffect, useState } from 'react'
-import Hamburger from '../Icons/Hamburger'
+import Hamburger from '../../Icons/Hamburger'
 import { responsive } from '@/styles/responsive'
 import useMediaQuery from '@/hooks/useMediaQuery'
-import HamburgerNavItems from './HamburgerNavItems'
+import CategoryNavItems from './CategoryNavItems'
 import * as styles from './styles'
-import Cart from '../Icons/Cart'
-import Logo from '../Icons/Logo'
+import Cart from '../../Icons/Cart'
+import Logo from '../../Icons/Logo'
 
 type Props = {}
 
@@ -33,7 +33,7 @@ const MobileNav:FC = () => {
           {isOpen && (
             <div className={styles.HamburgerOverlay}>
               <div className={styles.MobileNavBackground}>
-                <HamburgerNavItems />
+                <CategoryNavItems />
               </div>
             </div>
           )}

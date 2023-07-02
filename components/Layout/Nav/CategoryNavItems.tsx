@@ -2,21 +2,21 @@ import { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import Button from '../Button/Button'
-import Chevron from '../Icons/Chevron'
-import ImageComp from '../Image/BasicImageComp'
-import { hamburgerLinks } from './navLinks'
+import Chevron from '../../Icons/Chevron'
+import ImageComp from '../../UI/Image/BasicImageComp'
+import { categoryLinks } from './navLinks'
 import * as styles from './styles'
+import Button from '@/components/UI/Button/Button'
 
-type HamburgerLinkProps = {
+type CategoryLinkProps = {
   name: string
   img: StaticImageData
   href: string
 }
 type Props = {}
-const HamburgerNavItems: FC<Props> = () => {
-  const hamburgerCards = hamburgerLinks.map(
-    ({ name, img, href }: HamburgerLinkProps) => (
+const CategoryNavItems: FC<Props> = () => {
+  const CategoryCards = categoryLinks.map(
+    ({ name, img, href }: CategoryLinkProps) => (
       <section key={name} className={styles.Section}>
         <div className={styles.ImageWrapper}>
           <ImageComp src={img} alt={name} />
@@ -34,6 +34,6 @@ const HamburgerNavItems: FC<Props> = () => {
       </section>
     )
   )
-  return <>{hamburgerCards}</>
+  return <>{CategoryCards}</>
 }
-export default HamburgerNavItems
+export default CategoryNavItems
