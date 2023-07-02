@@ -24,6 +24,6 @@ export const Body = 'body uppercase max-h-max'
 
 //desktopNav
 export const Nav =
-  'hidden lg:flex h-[9.6rem] justify-between items-center w-full text-white'
+  'hidden lg:flex justify-between items-center w-full text-white'
 
-export const NavList = 'flex-column sm:flex gap-[3.4rem]'
+export const NavList = 'flex-column sm:flex gap-[3.4rem] uppercase'

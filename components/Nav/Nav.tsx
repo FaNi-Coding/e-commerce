@@ -13,9 +13,10 @@ import * as styles from './styles'
 type Props = {
 children?:ReactNode
 icon?: ReactNode
+navHeight?: string
 }
 
-const Nav: FC<Props> = ({children, icon}) => {
+const Nav: FC<Props> = ({children, icon, navHeight = ""}) => {
 
 
   const navList = navLinks.map(({ name, href }) => (
@@ -29,7 +30,7 @@ const Nav: FC<Props> = ({children, icon}) => {
       bgColor='bg-black'
       dynamicStyles='max-width-container-no-padding relative'
     >
-      <nav className={styles.Nav}>
+      <nav className={`${styles.Nav} ${navHeight}`}>
         <Logo />
         <ul className={styles.NavList}>{navList}</ul>
         {icon}

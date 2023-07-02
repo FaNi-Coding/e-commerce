@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={manrope.className}>
         <header>
-          <Nav icon={<Cart />}>
+          <Nav icon={<Cart />} navHeight='h-[9.6rem]'>
             <MobileNav />
           </Nav>
         </header>
