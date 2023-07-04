@@ -1,44 +1,28 @@
-'use client'
-import Cart from '@/components/Icons/Cart'
-import Article from '@/components/UI/Article/Article'
-import Button from '@/components/UI/Button/Button'
-import CoverImageComp from '@/components/UI/Image/CoverImageComp'
-import Section from '@/components/UI/Section/Section'
-import useMediaQuery from '@/hooks/useMediaQuery'
-import { responsive } from '@/styles/responsive'
-import { FC } from 'react'
-import HeroImgLaptop from '../../../assets/home/desktop/image-hero.jpg'
-import HeroImgMobile from '../../../assets/home/mobile/image-header.jpg'
-import HeroImgTablet from '../../../assets/home/tablet/image-header.jpg'
-import MobileNav from '../Nav/MobileNav'
-import Nav from '../Nav/Nav'
+'use client';
+import Cart from '@/components/Icons/Cart';
+import Article from '@/components/UI/Article/Article';
+import Button from '@/components/UI/Button/Button';
+import CoverImageComp from '@/components/UI/Image/CoverImageComp';
+import Section from '@/components/UI/Section/Section';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import { responsive } from '@/styles/responsive';
+import { FC } from 'react';
+import HeroImgLaptop from '../../../assets/home/desktop/image-hero.jpg';
+import HeroImgMobile from '../../../assets/home/mobile/image-header.jpg';
+import HeroImgTablet from '../../../assets/home/tablet/image-header.jpg';
+import MobileNav from '../Nav/MobileNav';
+import Nav from '../Nav/Nav';
 
-type Props = {}
+type Props = {};
 const Header: FC<Props> = ({}) => {
-  const isTabletL = useMediaQuery(responsive.tabletL)
-  const isTablet = useMediaQuery(responsive.tablet)
+  const isTabletL = useMediaQuery(responsive.tabletL);
+  const isTablet = useMediaQuery(responsive.tablet);
 
-  const renderImg = () => {
-    if (isTabletL) {
-      return (
-        <>
-          <CoverImageComp src={HeroImgLaptop} alt='aaa' />
-        </>
-      )
-    } else if (isTablet) {
-      return (
-        <>
-          <CoverImageComp src={HeroImgTablet} alt='aaa' />
-        </>
-      )
-    }
-
-    return (
-      <>
-        <CoverImageComp src={HeroImgMobile} alt='aaa' />
-      </>
-    )
-  }
+  const renderImgByScreenSize = isTabletL
+    ? HeroImgLaptop
+    : isTablet
+    ? HeroImgTablet
+    : HeroImgMobile;
 
   return (
     <>
@@ -58,10 +42,11 @@ const Header: FC<Props> = ({}) => {
             </p>
             <Button primary>SEE PRODUCT</Button>
           </Article>
-          {renderImg()}
+          {/* {renderImg()} */}
+          <CoverImageComp src={renderImgByScreenSize} alt='aaa' />
         </Section>
       </header>
     </>
-  )
-}
-export default Header
+  );
+};
+export default Header;
