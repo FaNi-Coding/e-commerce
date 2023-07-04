@@ -7,7 +7,7 @@ type Props = {
   alt: string;
   dynamicWrapperStyles?: string;
 };
-const ImageComp: FC<Props> = ({ src, sizes, alt, dynamicWrapperStyles }) => {
+const ImageComp: FC<Props> = ({ src, sizes, alt, dynamicWrapperStyles = "" }) => {
   return (
     <div className={`${dynamicWrapperStyles}`}>
       <Image

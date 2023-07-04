@@ -71,6 +71,16 @@
     line-height: auto;
     font-weight: 700;
   }
+
+  @media (max-width: 639px) {
+    .h1-mobile {
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 4rem;
+      letter-spacing: 0.1286rem;
+      text-transform: uppercase;
+    }
+  }
 }
 @layer components {
   .btn-primary {
@@ -97,6 +107,11 @@
   .max-width-container-no-padding {
     @apply container p-0 flex justify-between mx-auto gap-[4rem]  md:gap-[6.3rem] lg:gap-[12.5rem];
   }
+
+  .max-width-container-header {
+    @apply container flex flex-col justify-between mx-auto gap-[4rem] md:gap-[6.3rem] lg:gap-[12.5rem] ;
+  }
+
 }
 
 /**
@@ -142,7 +157,7 @@ body {
 }
 
 header {
-  background-color: black;
+  
 }
 
 /* A elements that don't have a class get default styles */
