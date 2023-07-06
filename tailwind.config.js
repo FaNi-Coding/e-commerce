@@ -25,6 +25,7 @@ module.exports = {
       error: '#CD2C2C',
       white: '#FFFFFF',
       black: '#000000',
+      header: '#181818',
     },
     extend: {
       padding: {
@@ -33,4 +34,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
