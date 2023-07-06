@@ -1,12 +1,15 @@
-'use client'
-import { newSlug } from '@/utils/functions'
-import { usePathname } from 'next/navigation'
+'use client';
+import { newSlug } from '@/utils/functions';
+import { usePathname } from 'next/navigation';
 
 const Category = () => {
-  const slug = usePathname()
-  console.log('router', slug)
+  const slug = usePathname();
+  console.log('router', slug);
+  return (
+    <section className='max-width-container'>
+      <h5>Category: {newSlug(slug, 1)}</h5>
+    </section>
+  );
+};
 
-  return <p>Category: {newSlug(slug, 1)}</p>
-}
-
-export default Category
+export default Category;

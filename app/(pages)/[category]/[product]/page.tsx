@@ -1,12 +1,11 @@
-'use client'
-import { newSlug } from '@/utils/functions'
-import { usePathname } from 'next/navigation'
+'use client';
+import { newSlug } from '@/utils/functions';
+import { usePathname } from 'next/navigation';
 
 const Product = () => {
-  const slug = usePathname()
-  console.log('router', slug)
+  //const slug = usePathname();
+  // product: {newSlug(slug, 2)}
+  return <section></section>;
+};
 
-  return <p>product: {newSlug(slug, 2)}</p>
-}
-
-export default Product
+export default Product;

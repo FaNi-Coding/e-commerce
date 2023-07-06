@@ -1,6 +1,6 @@
 //mobileNav
 export const MobileNav =
-  'lg:hidden flex border-b border-white justify-between items-center w-full text-white py-[4rem] px-[2.4rem] md:px-[4rem] z-10'
+  'lg:hidden flex  justify-between items-center w-full text-white py-[4rem] px-[2.4rem] md:px-[4rem] z-10 border-b border-[#979797]'
 
 export const NavWrapper = 'flex gap-[7rem] items-center w-full'
 

@@ -112,6 +112,10 @@
     @apply container flex flex-col justify-between mx-auto gap-[4rem] md:gap-[6.3rem] lg:gap-[12.5rem] ;
   }
 
+  .max-width-container-category-header {
+    @apply container flex flex-col mx-auto items-center md:gap-[7rem] lg:gap-[10rem] pb-[3.2rem] md:p-0 h-[19.2rem]
+  }
+
 }
 
 /**
@@ -153,12 +157,11 @@ body {
 
 /* Set core body defaults */
 body {
+  position: relative;
   text-rendering: optimizeSpeed;
 }
 
-header {
-  
-}
+
 
 /* A elements that don't have a class get default styles */
 a {
