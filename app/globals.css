@@ -113,7 +113,7 @@
   }
 
   .max-width-container-category-header {
-    @apply container flex flex-col mx-auto items-center md:gap-[7rem] lg:gap-[10rem] pb-[3.2rem] md:p-0 h-[19.2rem]
+    @apply container flex flex-col mx-auto items-center gap-[2rem] md:gap-[8rem] lg:gap-[10rem] h-[19.2rem]
   }
 
 }

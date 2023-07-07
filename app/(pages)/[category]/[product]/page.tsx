@@ -1,6 +1,6 @@
-'use client';
-import { newSlug } from '@/utils/functions';
-import { usePathname } from 'next/navigation';
+"use client";
+import { newSlug } from "@/utils/functions";
+import { usePathname } from "next/navigation";
 
 const Product = () => {
   //const slug = usePathname();
