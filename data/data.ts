@@ -109,7 +109,7 @@ export const products = [
       tablet:
         "../assets/product-xx59-headphones/tablet/image-category-page-preview.jpg",
       desktop:
-        "../assets/product-xx59-headphones/desktop/image-category-page-preview.jpg",
+        "../../../assets/product-xx59-headphones/desktop/image-category-page-preview.jpg",
     },
     new: false,
     price: 899,
@@ -201,7 +201,7 @@ export const products = [
       tablet:
         "../assets/product-xx99-mark-one-headphones/tablet/image-product.jpg",
       desktop:
-        "../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg",
+        "../../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg",
     },
     category: "headphones",
     categoryImage: {
@@ -210,7 +210,7 @@ export const products = [
       tablet:
         "../assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg",
       desktop:
-        "../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
+        "assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
     },
     new: false,
     price: 1750,
@@ -312,7 +312,7 @@ export const products = [
       tablet:
         "../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
       desktop:
-        "../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
+        "../../../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
     },
     new: true,
     price: 2999,

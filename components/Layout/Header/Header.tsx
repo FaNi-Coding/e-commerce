@@ -3,36 +3,35 @@ import Cart from "@/components/Icons/Cart";
 import { usePathname } from "next/navigation";
 import Section from "@/components/UI/Section/Section";
 import { FC, ReactNode } from "react";
-import { newSlug } from "@/utils/functions";
+import { slug } from "@/utils/functions";
 import MobileNav from "../Nav/MobileNav";
 import Nav from "../Nav/Nav";
 import { HeroHeader, CategoryHeader } from "./HeaderTypes";
 
 type Props = {};
 const Header: FC<Props> = () => {
-  const slug = usePathname();
-  let isNotHero = Boolean(newSlug(slug, 1));
+  const _slug = usePathname();
+  let isNotHero = !!slug(_slug, 1);
 
-  console.log("isNotHero", isNotHero);
   const isHeroStyles = !isNotHero
     ? "h-[60rem] md:h-[72.9rem]"
     : "md:h-[33.6rem]";
-  //max-width-container-header
-  const test = isNotHero
+
+  const globals = isNotHero
     ? "max-width-container-category-header"
     : "max-width-container-header";
   return (
     <>
       <header>
         <Section
-          dynamicStyles={`${test} relative ${isHeroStyles}`}
+          dynamicStyles={`${globals} relative ${isHeroStyles}`}
           bgColor="bg-header"
         >
           <Nav icon={<Cart />} navHeight="h-[8.9rem] md:h-[9.6rem]">
             <MobileNav />
           </Nav>
           {isNotHero ? (
-            <CategoryHeader slug={newSlug(slug, 1)} />
+            <CategoryHeader slug={slug(_slug, 1)} />
           ) : (
             <HeroHeader />
           )}
