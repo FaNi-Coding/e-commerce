@@ -1,5 +1,6 @@
 'use client';
 import CategoryProducts from '@/components/Common/CategoryProducts/CategoryProducts';
+import CategoryLinksSection from '@/components/UI/CategoryLinksSection/CategoryLinksSection';
 import { products } from '@/data/data';
 import { slug } from '@/utils/functions';
 import { usePathname } from 'next/navigation';
@@ -23,6 +24,7 @@ const Category = () => {
   return (
     <>
       <CategoryProducts products={__products} />
+      <CategoryLinksSection />
     </>
   );
 };
