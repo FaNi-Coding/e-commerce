@@ -1,6 +1,6 @@
-import Headphones from '../../../assets/shared/desktop/image-category-thumbnail-headphones.png'
-import Earphones from '../../../assets/shared/desktop/image-category-thumbnail-earphones.png'
-import Speakers from '../../../assets/shared/desktop/image-category-thumbnail-speakers.png'
+import Headphones from 'public/assets/shared/desktop/image-category-thumbnail-headphones.png'
+import Earphones from 'public/assets/shared/desktop/image-category-thumbnail-earphones.png'
+import Speakers from 'public/assets/shared/desktop/image-category-thumbnail-speakers.png'
 
 export const navLinks = [
   { href: '/', name: 'Home' },

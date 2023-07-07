@@ -1,8 +1,8 @@
-"use client";
-import CategoryProducts from "@/components/Common/CategoryProducts/CategoryProducts";
-import { products } from "@/data/data";
-import { slug } from "@/utils/functions";
-import { usePathname } from "next/navigation";
+'use client';
+import CategoryProducts from '@/components/Common/CategoryProducts/CategoryProducts';
+import { products } from '@/data/data';
+import { slug } from '@/utils/functions';
+import { usePathname } from 'next/navigation';
 
 const Category = () => {
   const _slug = usePathname();
@@ -16,9 +16,9 @@ const Category = () => {
       name: product.name,
       description: product.description,
       image: product.categoryImage.desktop,
+      new: product.new,
     };
   });
-  console.log("_products", _products);
 
   return (
     <>
