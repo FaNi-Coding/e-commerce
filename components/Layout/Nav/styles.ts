@@ -1,6 +1,6 @@
 //mobileNav
 export const MobileNav =
-  'lg:hidden flex border-b border-white justify-between items-center w-full text-white py-[4rem] px-[2.4rem] md:px-[4rem] z-10'
+  'lg:hidden flex justify-between items-center w-full text-white py-[2rem] px-4 md:px-0 z-10 border-b border-[#979797] md:border-none'
 
 export const NavWrapper = 'flex gap-[7rem] items-center w-full'
 
@@ -26,4 +26,4 @@ export const Body = 'body uppercase max-h-max'
 export const Nav =
   'hidden lg:flex justify-between items-center w-full text-white z-10'
 
-export const NavList = 'flex-column sm:flex gap-[3.4rem] uppercase'
+export const NavList = 'flex-column sm:flex gap-[3.4rem] uppercase mr-[12rem]'

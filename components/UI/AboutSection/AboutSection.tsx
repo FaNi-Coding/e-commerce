@@ -1,11 +1,11 @@
-import { FC } from 'react'
-import Section from '../Section/Section'
-import BasicImageComp from '../Image/BasicImageComp'
-import Bitmap from '../../../assets/Bitmap.png'
-import { responsive } from '@/styles/responsive'
-import Article from '../Article/Article'
+import { FC } from 'react';
+import Section from '../Section/Section';
+import BasicImageComp from '../Image/BasicImageComp';
+import Bitmap from 'public/assets/Bitmap.png';
+import { responsive } from '@/styles/responsive';
+import Article from '../Article/Article';
 
-type Props = {}
+type Props = {};
 const AboutSection: FC<Props> = () => {
   return (
     <Section dynamicStyles='max-width-container col-reverse row-laptop'>
@@ -23,10 +23,10 @@ const AboutSection: FC<Props> = () => {
       <BasicImageComp
         src={Bitmap}
         alt='dic'
-        dynamicWrapperStyles='w-full lg:w-1/2'
+        dynamicWrapperStyles='w-full lg:w-1/2 '
         sizes={`${responsive.laptop} 40vw, 100vw`}
       />
     </Section>
-  )
-}
-export default AboutSection
+  );
+};
+export default AboutSection;

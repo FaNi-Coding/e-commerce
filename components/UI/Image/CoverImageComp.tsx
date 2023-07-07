@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 type Props = {
-  src: StaticImageData;
+  src: StaticImageData | string;
   sizes?: string;
   alt: string;
   dynamicWrapperStyles?: string;
@@ -22,7 +22,6 @@ const ImageComp: FC<Props> = ({
           objectFit: 'cover',
         }}
         sizes={sizes}
-        placeholder='blur'
         alt={alt}
       />
     </div>

@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import { FC } from "react";
+import Image, { StaticImageData } from "next/image";
 
-import * as styles from './styles';
+import * as styles from "./styles";
 
 type Props = {
-  src: StaticImageData;
+  src: StaticImageData | string;
   sizes?: string;
   alt: string;
   dynamicWrapperStyles?: string;
@@ -16,7 +16,7 @@ const ImageComp: FC<Props> = ({ src, sizes, alt, dynamicWrapperStyles }) => {
         src={src}
         style={styles.basicImage}
         sizes={sizes}
-        placeholder='blur'
+        placeholder="blur"
         alt={alt}
       />
     </div>
