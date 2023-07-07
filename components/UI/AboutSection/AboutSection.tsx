@@ -23,7 +23,7 @@ const AboutSection: FC<Props> = () => {
       <BasicImageComp
         src={Bitmap}
         alt='dic'
-        dynamicWrapperStyles='w-full lg:w-1/2'
+        dynamicWrapperStyles='w-full lg:w-1/2 '
         sizes={`${responsive.laptop} 40vw, 100vw`}
       />
     </Section>

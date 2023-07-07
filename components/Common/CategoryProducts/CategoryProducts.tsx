@@ -25,7 +25,7 @@ const CategoryProducts: FC<CategoryProductProps> = ({ products }) => {
               idx % 2 !== 0 ? 'row-laptop' : 'row-reverse-laptop'
             }`}
           >
-            <Article dynamicStyles='text-center lg:text-left'>
+            <Article dynamicStyles='text-center items-center lg:items-start lg:text-left'>
               {product.new && (
                 <p className='overline text-primary'>NEW PRODUCT</p>
               )}
@@ -34,7 +34,7 @@ const CategoryProducts: FC<CategoryProductProps> = ({ products }) => {
               <Button primary>SEE PRODUCT</Button>
             </Article>
             <CoverImageComp
-              dynamicWrapperStyles='relative w-full lg:h-[56rem] md:w-1/2'
+              dynamicWrapperStyles='relative w-full h-[35.2rem] md:self-center lg:self-start lg:h-[56rem] md:w-1/2'
               src={product.image}
               alt={`image of ${product.name}`}
               sizes={`${responsive.laptop} 40vw, 100vw`}
