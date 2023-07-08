@@ -1,33 +1,32 @@
 "use client";
 import CategoryProducts from "@/components/Common/CategoryProducts/CategoryProducts";
 import Button from "@/components/UI/Button/Button";
-import { slug } from "@/utils/functions";
+import { findPathname } from "@/utils/functions";
 import { usePathname } from "next/navigation";
 import { products } from "@/data/data";
 
 const Product = () => {
   const _slug = usePathname();
-  const productPage = slug(_slug, 2);
+  const productPage = findPathname(_slug, 2);
 
-  /*   console.log("product", productPage);
-  const _products = products
-  .filter((product) => product.category === productPage)
-  .map((product) => {
-    return {
-      name: product.name,
-      description: product.description,
-      image: product.categoryImage.desktop,
-      new: product.new,
-    };
-  }); */
+  const productDetails = products
+    .filter((product) => product.slug === productPage)
+    .map((product) => {
+      return {
+        name: product.name,
+        description: product.description,
+        image: product.categoryImage.desktop,
+        new: product.new,
+        slug: product.slug,
+      };
+    });
 
   return (
     <>
-      {/*  <CategoryProducts>
-        <Button primary isMargin>
-          add to cart
-        </Button>
-      </CategoryProducts> */}
+      <CategoryProducts
+        categoryProducts={productDetails}
+        productPage={productPage}
+      />
     </>
   );
 };

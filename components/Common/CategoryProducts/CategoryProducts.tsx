@@ -4,25 +4,27 @@ import CoverImageComp from "@/components/UI/Image/CoverImageComp";
 import Section from "@/components/UI/Section/Section";
 import { responsive } from "@/styles/responsive";
 import { FC, ReactNode } from "react";
+import CountProductAmount from "./CountProductamount";
 
 export type CategoryProductProps = {
   name: string;
   description: string;
   image: string;
   new: boolean;
-  url: string;
+  slug: string;
 }[];
 
 type Props = {
-  children?: ReactNode;
-  categoryPage: string;
   categoryProducts: CategoryProductProps;
+  productPage?: string;
+  categoryPage?: string;
+  children?: ReactNode;
 };
 
 const CategoryProducts: FC<Props> = ({
   categoryProducts,
+  productPage,
   categoryPage,
-  children,
 }) => {
   const renderOnCategoryPage = (url: string) => {
     return (
@@ -33,6 +35,19 @@ const CategoryProducts: FC<Props> = ({
           </Button>
         )}
       </>
+    );
+  };
+
+  const renderOnProductPage = () => {
+    return (
+      <div className="grid grid-cols-2 gap-[1rem] mt-8">
+        {productPage && (
+          <>
+            <CountProductAmount />
+            <Button primary>ADD TO CART</Button>
+          </>
+        )}
+      </div>
     );
   };
 
@@ -52,7 +67,8 @@ const CategoryProducts: FC<Props> = ({
               )}
               <h2>{product.name}</h2>
               <p>{product.description}</p>
-              {renderOnCategoryPage(`${categoryPage}/${product.url}`)}
+              {renderOnCategoryPage(`${categoryPage}/${product.slug}`)}
+              {renderOnProductPage()}
             </Article>
             <CoverImageComp
               dynamicWrapperStyles="relative w-full h-[35.2rem] md:self-center lg:self-start lg:h-[56rem] md:w-1/2"

@@ -3,7 +3,7 @@ import Cart from "@/components/Icons/Cart";
 import { usePathname } from "next/navigation";
 import Section from "@/components/UI/Section/Section";
 import { FC, ReactNode } from "react";
-import { slug } from "@/utils/functions";
+import { findPathname } from "@/utils/functions";
 import MobileNav from "../Nav/MobileNav";
 import Nav from "../Nav/Nav";
 import { HeroHeader, CategoryHeader } from "./HeaderTypes";
@@ -11,7 +11,7 @@ import { HeroHeader, CategoryHeader } from "./HeaderTypes";
 type Props = {};
 const Header: FC<Props> = () => {
   const _slug = usePathname();
-  let isNotHero = !!slug(_slug, 1);
+  let isNotHero = !!findPathname(_slug, 1);
 
   const isHeroStyles = !isNotHero
     ? "h-[60rem] md:h-[72.9rem]"
@@ -31,7 +31,7 @@ const Header: FC<Props> = () => {
             <MobileNav />
           </Nav>
           {isNotHero ? (
-            <CategoryHeader slug={slug(_slug, 1)} />
+            <CategoryHeader slug={findPathname(_slug, 1)} />
           ) : (
             <HeroHeader />
           )}

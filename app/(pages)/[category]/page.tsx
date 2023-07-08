@@ -6,13 +6,13 @@ import AboutSection from "@/components/UI/AboutSection/AboutSection";
 import Button from "@/components/UI/Button/Button";
 import CategoryLinksSection from "@/components/UI/CategoryLinksSection/CategoryLinksSection";
 import { products } from "@/data/data";
-import { slug } from "@/utils/functions";
+import { findPathname } from "@/utils/functions";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Category = () => {
   const _slug = usePathname();
-  const categoryPage = slug(_slug, 1);
+  const categoryPage = findPathname(_slug, 1);
   const categoryProducts: CategoryProductProps = products
     .filter((product) => product.category === categoryPage)
     .map((product) => {
@@ -21,7 +21,7 @@ const Category = () => {
         description: product.description,
         image: product.categoryImage.desktop,
         new: product.new,
-        url: product.slug,
+        slug: product.slug,
       };
     });
 
