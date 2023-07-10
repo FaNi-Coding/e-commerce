@@ -5,14 +5,7 @@ import Section from "@/components/UI/Section/Section";
 import { responsive } from "@/styles/responsive";
 import { FC, ReactNode } from "react";
 import CountProductAmount from "./CountProductamount";
-
-export type CategoryProductProps = {
-  name: string;
-  description: string;
-  image: string;
-  new: boolean;
-  slug: string;
-}[];
+import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
 
 type Props = {
   categoryProducts: CategoryProductProps;
@@ -26,28 +19,31 @@ const CategoryProducts: FC<Props> = ({
   productPage,
   categoryPage,
 }) => {
-  const renderOnCategoryPage = (url: string) => {
+  const renderJSXOnCategoryPage = (url: string) => {
     return (
       <>
         {categoryPage && (
           <Button primary isMargin href={url}>
-            SEE PRODUCT
+            see product
           </Button>
         )}
       </>
     );
   };
 
-  const renderOnProductPage = () => {
+  const renderJSXOnProductPage = (price: number | undefined) => {
     return (
-      <div className="grid grid-cols-2 gap-[1rem] mt-8">
+      <>
         {productPage && (
           <>
-            <CountProductAmount />
-            <Button primary>ADD TO CART</Button>
+            <p className="body">$ {price}</p>
+            <div className="grid grid-cols-2 gap-[1rem] mt-8">
+              <CountProductAmount />
+              <Button primary>add to cart</Button>
+            </div>
           </>
         )}
-      </div>
+      </>
     );
   };
 
@@ -63,16 +59,16 @@ const CategoryProducts: FC<Props> = ({
           >
             <Article dynamicStyles="text-center items-center lg:items-start lg:text-left">
               {product.new && (
-                <p className="overline text-primary">NEW PRODUCT</p>
+                <p className="overline text-primary">new product</p>
               )}
               <h2>{product.name}</h2>
               <p>{product.description}</p>
-              {renderOnCategoryPage(`${categoryPage}/${product.slug}`)}
-              {renderOnProductPage()}
+              {renderJSXOnCategoryPage(`${categoryPage}/${product.slug}`)}
+              {renderJSXOnProductPage(product.price)}
             </Article>
             <CoverImageComp
               dynamicWrapperStyles="relative w-full h-[35.2rem] md:self-center lg:self-start lg:h-[56rem] md:w-1/2"
-              src={product.image}
+              src={product.image.desktop}
               alt={`image of ${product.name}`}
               sizes={`${responsive.laptop} 40vw, 100vw`}
             />

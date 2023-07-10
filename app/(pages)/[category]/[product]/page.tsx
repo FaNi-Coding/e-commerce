@@ -1,25 +1,19 @@
 "use client";
 import CategoryProducts from "@/components/Common/CategoryProducts/CategoryProducts";
-import Button from "@/components/UI/Button/Button";
 import { findPathname } from "@/utils/functions";
 import { usePathname } from "next/navigation";
 import { products } from "@/data/data";
+import Section from "@/components/UI/Section/Section";
+import InTheBox from "@/components/Pages/Product/InTheBox/InTheBox";
+import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
 
 const Product = () => {
   const _slug = usePathname();
   const productPage = findPathname(_slug, 2);
 
-  const productDetails = products
-    .filter((product) => product.slug === productPage)
-    .map((product) => {
-      return {
-        name: product.name,
-        description: product.description,
-        image: product.categoryImage.desktop,
-        new: product.new,
-        slug: product.slug,
-      };
-    });
+  const productDetails: CategoryProductProps = products.filter(
+    (product) => product.slug === productPage
+  );
 
   return (
     <>
@@ -27,6 +21,8 @@ const Product = () => {
         categoryProducts={productDetails}
         productPage={productPage}
       />
+
+      <InTheBox categoryProducts={productDetails} />
     </>
   );
 };
