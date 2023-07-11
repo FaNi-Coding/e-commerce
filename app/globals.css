@@ -84,13 +84,13 @@
 }
 @layer components {
   .btn-primary {
-    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText;
+    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText uppercase;
   }
   .btn-secondary {
-    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText;
+    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText uppercase;
   }
   .btn-tertiary {
-    @apply px-[3rem] py-[1.5rem] text-black font-bold flex items-center justify-center gap-x-3 max-w-max buttonText;
+    @apply px-[3rem] py-[1.5rem] text-black font-bold flex items-center justify-center gap-x-3 max-w-max buttonText uppercase;
   }
   .col-reverse {
     @apply flex-col-reverse;

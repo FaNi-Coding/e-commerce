@@ -161,11 +161,11 @@ export const products = [
         name: "XX99 Mark II",
         image: {
           mobile:
-            "../public/assets/shared/mobile/image-xx99-mark-two-headphones.jpg",
+            "/assets/shared/mobile/image-xx99-mark-two-headphones.jpg",
           tablet:
-            "../public/assets/shared/tablet/image-xx99-mark-two-headphones.jpg",
+            "/assets/shared/tablet/image-xx99-mark-two-headphones.jpg",
           desktop:
-            "../public/assets/shared/desktop/image-xx99-mark-two-headphones.jpg",
+            "/assets/shared/desktop/image-xx99-mark-two-headphones.jpg",
         },
       },
       {
@@ -173,20 +173,20 @@ export const products = [
         name: "XX99 Mark I",
         image: {
           mobile:
-            "../public/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
+            "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
           tablet:
-            "../public/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
+            "/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
           desktop:
-            "../public/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
+            "/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
         },
       },
       {
         slug: "zx9-speaker",
         name: "ZX9 Speaker",
         image: {
-          mobile: "../public/assets/shared/mobile/image-zx9-speaker.jpg",
-          tablet: "../public/assets/shared/tablet/image-zx9-speaker.jpg",
-          desktop: "../public/assets/shared/desktop/image-zx9-speaker.jpg",
+          mobile: "/assets/shared/mobile/image-zx9-speaker.jpg",
+          tablet: "/assets/shared/tablet/image-zx9-speaker.jpg",
+          desktop: "/assets/shared/desktop/image-zx9-speaker.jpg",
         },
       },
     ],

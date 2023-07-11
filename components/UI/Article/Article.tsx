@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
-import { FC } from 'react';
-import * as styles from './styles';
+import React, { ReactNode } from "react";
+import { FC } from "react";
+import * as styles from "./styles";
 
 type Props = {
   dynamicStyles?: string;
