@@ -54,7 +54,7 @@ const CategoryProducts: FC<Props> = ({
           <Section
             key={product.name}
             dynamicStyles={`max-width-container col-reverse ${
-              idx > 2 && idx % 2 === 0 ? "row-reverse-laptop" : "row-laptop"
+              idx % 2 === 0 ? "row-reverse-laptop" : "row-laptop"
             }`}
           >
             <Article dynamicStyles="text-center items-center lg:items-start lg:text-left">
