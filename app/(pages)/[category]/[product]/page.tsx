@@ -3,9 +3,9 @@ import CategoryProducts from "@/components/Common/CategoryProducts/CategoryProdu
 import { findPathname } from "@/utils/functions";
 import { usePathname } from "next/navigation";
 import { products } from "@/data/data";
-import Section from "@/components/UI/Section/Section";
 import InTheBox from "@/components/Pages/Product/InTheBox/InTheBox";
 import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
+import ProductGrid from "@/components/Pages/Product/ProductGrid/ProductGrid";
 
 const Product = () => {
   const _slug = usePathname();
@@ -21,8 +21,8 @@ const Product = () => {
         categoryProducts={productDetails}
         productPage={productPage}
       />
-
       <InTheBox categoryProducts={productDetails} />
+      <ProductGrid categoryProducts={productDetails} />
     </>
   );
 };

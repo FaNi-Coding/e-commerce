@@ -8,8 +8,6 @@ type Props = {
 };
 
 const InTheBox: FC<Props> = ({ categoryProducts }) => {
-  console.log("categoryProducts", categoryProducts);
-
   return (
     <Section dynamicStyles="max-width-container grid grid-cols-1 lg:grid-cols-2 gap-[12.5rem]">
       <Article dynamicStyles="lg:w-full">
