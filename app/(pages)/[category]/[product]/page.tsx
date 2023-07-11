@@ -6,6 +6,9 @@ import { products } from "@/data/data";
 import InTheBox from "@/components/Pages/Product/InTheBox/InTheBox";
 import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
 import ProductGrid from "@/components/Pages/Product/ProductGrid/ProductGrid";
+import OtherProductLinks from "@/components/Pages/Product/OtherProductLinks/OtherProductLinks";
+import CategoryLinksSection from "@/components/UI/CategoryLinksSection/CategoryLinksSection";
+import AboutSection from "@/components/UI/AboutSection/AboutSection";
 
 const Product = () => {
   const _slug = usePathname();
@@ -23,6 +26,9 @@ const Product = () => {
       />
       <InTheBox categoryProducts={productDetails} />
       <ProductGrid categoryProducts={productDetails} />
+      <OtherProductLinks categoryProducts={productDetails} />
+      <CategoryLinksSection />
+      <AboutSection />
     </>
   );
 };

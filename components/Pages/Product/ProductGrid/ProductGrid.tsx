@@ -7,6 +7,7 @@ import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
 type Props = {
   categoryProducts: CategoryProductProps;
 };
+
 const ProductGrid: FC<Props> = ({ categoryProducts }) => {
   const gridArray = categoryProducts
     .map((product) => [
@@ -18,8 +19,8 @@ const ProductGrid: FC<Props> = ({ categoryProducts }) => {
 
   return (
     <>
-      <Section dynamicStyles="max-width-container gap-[2rem] md:gap-[1.8rem] lg:gap-[3rem] grid grid-cols-1 md:grid-cols-2 h-[75.6rem] md:h-[36.8rem] lg:h-[59.2rem]">
-        <span className="inline-grid grid-cols-1 gap-[2rem] md:gap-[1.8rem] lg:gap-[3rem]">
+      <Section dynamicStyles="max-width-container gap-[2rem] md:gap-[1.8rem] lg:gap-[3rem] grid grid-cols-1 md:grid-cols-2 ">
+        <span className="inline-grid grid-cols-1 gap-[2rem] md:gap-[1.8rem] lg:gap-[3rem] h-[36.8rem] lg:h-[59rem]">
           <CoverImageComp
             dynamicWrapperStyles="relative w-full h-full"
             src={gridArray[0]}
@@ -27,20 +28,19 @@ const ProductGrid: FC<Props> = ({ categoryProducts }) => {
             sizes={`${responsive.laptop} 60vw, 100vw`}
           />
           <CoverImageComp
-            dynamicWrapperStyles="relative"
+            dynamicWrapperStyles="relative w-full h-full"
             src={gridArray[1]}
             alt="dic"
             sizes={`${responsive.laptop} 60vw, 100vw`}
           />
         </span>
-        <div className="">
-          <CoverImageComp
-            dynamicWrapperStyles="relative w-full h-full"
-            src={gridArray[2]}
-            alt="dic"
-            sizes={`${responsive.laptop} 60vw, 100vw`}
-          />
-        </div>
+
+        <CoverImageComp
+          dynamicWrapperStyles="relative h-[36.8rem] lg:h-[59.2rem]"
+          src={gridArray[2]}
+          alt="dic"
+          sizes={`${responsive.laptop} 60vw, 100vw`}
+        />
       </Section>
     </>
   );
