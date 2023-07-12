@@ -1,7 +1,8 @@
 export const responsive = {
-  mobile: '(min-width: 37.6rem)',
-  mobileL: '(min-width: 65rem)',
-  tablet: '(min-width: 76.8rem)',
-  laptop: '(min-width: 120rem)',
-  desktop: '(min-width: 179.2rem)',
+  mobile: '(min-width: 640px)',
+  tablet: '(min-width: 768px)',
+  tabletL: '(min-width: 1024px)',
+  laptop: '(min-width: 1240px)',
+  desktop: '(min-width: 1280px)',
+  desktopL: '(min-width: 1536px)',
 } as const

@@ -1,12 +1,30 @@
-'use client'
-import { newSlug } from '@/utils/functions'
-import { usePathname } from 'next/navigation'
+"use client";
+import CategoryProducts from "@/components/Common/CategoryProducts/CategoryProducts";
+import AboutSection from "@/components/UI/AboutSection/AboutSection";
+import CategoryLinksSection from "@/components/UI/CategoryLinksSection/CategoryLinksSection";
+import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
+import { products } from "@/data/data";
+import { findPathname } from "@/utils/functions";
+import { usePathname } from "next/navigation";
 
 const Category = () => {
-  const slug = usePathname()
-  console.log('router', slug)
+  const _slug = usePathname();
+  const categoryPage = findPathname(_slug, 1);
 
-  return <p>Category: {newSlug(slug, 1)}</p>
-}
+  const categoryProducts: CategoryProductProps = products.filter(
+    (product) => product.category === categoryPage
+  );
 
-export default Category
+  return (
+    <>
+      <CategoryProducts
+        categoryProducts={categoryProducts}
+        categoryPage={categoryPage}
+      />
+      <CategoryLinksSection />
+      <AboutSection />
+    </>
+  );
+};
+
+export default Category;

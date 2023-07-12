@@ -1,2 +1,2 @@
-export const newSlug = (slug: string, position: number) =>
+export const findPathname = (slug: string, position: number) =>
   slug.split('/')[position]

@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import { FC } from 'react'
+import Link from 'next/link';
+import { FC } from 'react';
 
-import { ButtonProps } from './buttonTypes'
+import { ButtonProps } from './buttonTypes';
 
 const Button: FC<ButtonProps> = ({
   primary,
@@ -18,9 +18,9 @@ const Button: FC<ButtonProps> = ({
     ? 'btn-secondary'
     : tertiary
     ? 'btn-tertiary'
-    : ''
+    : '';
 
-  const buttonTopMargin = isMargin && 'mt-8'
+  const buttonTopMargin = isMargin ? 'mt-8' : '';
   return (
     <Link
       href={href || ''}
@@ -28,6 +28,6 @@ const Button: FC<ButtonProps> = ({
     >
       {children}
     </Link>
-  )
-}
-export default Button
+  );
+};
+export default Button;

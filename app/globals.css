@@ -71,16 +71,26 @@
     line-height: auto;
     font-weight: 700;
   }
+
+  @media (max-width: 639px) {
+    .h1-mobile {
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 4rem;
+      letter-spacing: 0.1286rem;
+      text-transform: uppercase;
+    }
+  }
 }
 @layer components {
   .btn-primary {
-    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText;
+    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText uppercase;
   }
   .btn-secondary {
-    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText;
+    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText uppercase;
   }
   .btn-tertiary {
-    @apply px-[3rem] py-[1.5rem] text-black font-bold flex items-center justify-center gap-x-3 max-w-max buttonText;
+    @apply px-[3rem] py-[1.5rem] text-black font-bold flex items-center justify-center gap-x-3 max-w-max buttonText uppercase;
   }
   .col-reverse {
     @apply flex-col-reverse;
@@ -91,12 +101,24 @@
   .row-laptop {
     @apply lg:flex-row;
   }
+  .row-reverse-laptop {
+    @apply lg:flex-row-reverse;
+  }
   .max-width-container {
     @apply container flex justify-between mx-auto gap-[4rem] py-8 md:gap-[6.3rem] md:py-[9.6rem] lg:gap-[12.5rem] lg:py-40;
   }
   .max-width-container-no-padding {
     @apply container p-0 flex justify-between mx-auto gap-[4rem]  md:gap-[6.3rem] lg:gap-[12.5rem];
   }
+
+  .max-width-container-header {
+    @apply container flex flex-col justify-between mx-auto gap-[4rem] md:gap-[6.3rem] lg:gap-[12.5rem] ;
+  }
+
+  .max-width-container-category-header {
+    @apply container flex flex-col mx-auto items-center gap-[2rem] md:gap-[8rem] lg:gap-[10rem] h-[19.2rem]
+  }
+
 }
 
 /**
@@ -138,12 +160,11 @@ body {
 
 /* Set core body defaults */
 body {
+  position: relative;
   text-rendering: optimizeSpeed;
 }
 
-header {
-  background-color: black;
-}
+
 
 /* A elements that don't have a class get default styles */
 a {

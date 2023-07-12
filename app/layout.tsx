@@ -1,17 +1,15 @@
-import { Manrope } from 'next/font/google';
+import Footer from "@/components/Layout/Footer/Footer";
+import Header from "@/components/Layout/Header/Header";
+import { Manrope } from "next/font/google";
 
-import './globals.css';
-import Nav from '@/components/Layout/Nav/Nav';
-import MobileNav from '@/components/Layout/Nav/MobileNav';
-import Cart from '@/components/Icons/Cart';
-import Footer from '@/components/Layout/Footer/Footer';
+import "./globals.css";
 
-const manrope = Manrope({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'E-commerce 2.0',
+  title: "E-commerce 2.0",
   description:
-    'E-commerce 2.0 is a demo e-commerce site built with Next.js and TypeScript.',
+    "E-commerce 2.0 is a demo e-commerce site built with Next.js and TypeScript.",
 };
 
 export default function RootLayout({
@@ -20,13 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={manrope.className}>
-        <header>
-          <Nav icon={<Cart />} navHeight='h-[9.6rem]'>
-            <MobileNav />
-          </Nav>
-        </header>
+        <Header />
         <main>{children}</main>
         <Footer />
       </body>
