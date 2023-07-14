@@ -16,7 +16,7 @@ const CountProductAmount = (props: Props) => {
   return (
     <div className="flex justify-between items-center p-[.15rem] gap-[.8rem] w-full bg-tertiary">
       <button
-        className=" w-full h-full border-none"
+        className="w-full h-full border-none hoverTertiary disabled:cursor-not-allowed"
         onClick={handleCount}
         id="minus-button"
         disabled={count <= 0}
@@ -25,7 +25,7 @@ const CountProductAmount = (props: Props) => {
       </button>
       <p className="body">{count}</p>
       <button
-        className="w-full h-full border-none"
+        className="w-full h-full border-none hoverTertiary"
         onClick={handleCount}
         id="plus-button"
       >

@@ -83,14 +83,38 @@
   }
 }
 @layer components {
+
+  .hoverSocials {
+    @apply fill-white hover:fill-primary hover:transition-all hover:duration-300 hover:ease-linear
+  }
+
+  .hoverPrimary{
+    @apply hover:bg-fourthly hover:text-white hover:transition-all hover:duration-300 hover:ease-linear
+  }
+
+  .hoverSecondary {
+    @apply hover:bg-secondary hover:text-white hover:transition-all hover:duration-300 hover:ease-linear
+  }
+
+  .hoverTertiary{
+    @apply hover:text-primary hover:transition-all hover:duration-300 hover:ease-linear
+  }
+
+  .hoverFourthly {
+    @apply hover:bg-black-hover hover:text-white hover:transition-all hover:duration-300 hover:ease-linear
+  }
+
   .btn-primary {
-    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText uppercase;
+    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-primary max-w-max buttonText uppercase hoverPrimary;
   }
   .btn-secondary {
-    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText uppercase;
+    @apply px-[3rem] py-[1.5rem] text-black bg-white font-bold border-black border max-w-max buttonText uppercase hoverSecondary;
   }
   .btn-tertiary {
-    @apply px-[3rem] py-[1.5rem] text-black font-bold flex items-center justify-center gap-x-3 max-w-max buttonText uppercase;
+    @apply px-[3rem] py-[1.5rem] text-black font-bold flex items-center justify-center gap-x-3 max-w-max buttonText uppercase hoverTertiary;
+  }
+  .btn-fourthly {
+    @apply px-[3rem] py-[1.5rem] text-white font-bold bg-secondary max-w-max buttonText uppercase hoverFourthly;
   }
   .col-reverse {
     @apply flex-col-reverse;

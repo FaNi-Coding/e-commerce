@@ -9,11 +9,13 @@ type Props = {
 };
 
 const ProductGrid: FC<Props> = ({ categoryProducts }) => {
+  console.log("categoryProducts", categoryProducts);
+
   const gridArray = categoryProducts
-    .map((product) => [
-      product.gallery.first.desktop,
-      product.gallery.second.desktop,
-      product.gallery.third.desktop,
+    .map(({ gallery }) => [
+      gallery.first.desktop,
+      gallery.second.desktop,
+      gallery.third.desktop,
     ])
     .flat();
 
@@ -24,13 +26,13 @@ const ProductGrid: FC<Props> = ({ categoryProducts }) => {
           <CoverImageComp
             dynamicWrapperStyles="relative w-full h-full"
             src={gridArray[0]}
-            alt="dic"
+            alt="first-product-gallery-image"
             sizes={`${responsive.laptop} 60vw, 100vw`}
           />
           <CoverImageComp
             dynamicWrapperStyles="relative w-full h-full"
             src={gridArray[1]}
-            alt="dic"
+            alt="second-product-gallery-image"
             sizes={`${responsive.laptop} 60vw, 100vw`}
           />
         </span>
@@ -38,7 +40,7 @@ const ProductGrid: FC<Props> = ({ categoryProducts }) => {
         <CoverImageComp
           dynamicWrapperStyles="relative h-[36.8rem] lg:h-[59.2rem]"
           src={gridArray[2]}
-          alt="dic"
+          alt="third-product-gallery-image"
           sizes={`${responsive.laptop} 60vw, 100vw`}
         />
       </Section>
