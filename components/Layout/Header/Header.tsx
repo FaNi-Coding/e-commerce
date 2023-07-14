@@ -1,8 +1,8 @@
 "use client";
-import Cart from "@/components/Icons/Cart";
-import { usePathname } from "next/navigation";
-import Section from "@/components/UI/Section/Section";
 import { FC } from "react";
+import { usePathname } from "next/navigation";
+import Cart from "@/components/Icons/Cart";
+import Section from "@/components/UI/Section/Section";
 import { findPathname } from "@/utils/functions";
 import MobileNav from "../Nav/MobileNav";
 import Nav from "../Nav/Nav";
