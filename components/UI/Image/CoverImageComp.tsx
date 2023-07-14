@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import { FC } from "react";
+import Image, { StaticImageData } from "next/image";
 
 type Props = {
   src: StaticImageData | string;
@@ -11,7 +11,7 @@ const ImageComp: FC<Props> = ({
   src,
   sizes,
   alt,
-  dynamicWrapperStyles = '',
+  dynamicWrapperStyles = "",
 }) => {
   return (
     <div className={`${dynamicWrapperStyles}`}>
@@ -19,7 +19,7 @@ const ImageComp: FC<Props> = ({
         src={src}
         fill
         style={{
-          objectFit: 'cover',
+          objectFit: "cover",
         }}
         sizes={sizes}
         alt={alt}

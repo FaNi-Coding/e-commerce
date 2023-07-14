@@ -16,25 +16,21 @@ const OtherProductLinks: FC<Props> = ({ categoryProducts }) => {
 
   const productLinks = categoryProducts.map((product) =>
     product.others
-      .map((other) => (
+      .map(({ name, image, slug }) => (
         <article
-          key={other.name}
+          key={name}
           className="w-full grid place-items-center gap-[4rem]"
         >
           <CoverImageComp
             dynamicWrapperStyles="relative w-[32.7rem] h-[12rem] md:w-[22.3rem] md:h-[31.8rem] xl:w-[35rem]"
             src={
-              isLaptop
-                ? other.image.desktop
-                : isTablet
-                ? other.image.tablet
-                : other.image.mobile
+              isLaptop ? image.desktop : isTablet ? image.tablet : image.mobile
             }
-            alt="dic"
+            alt="product-link-image"
             sizes={`${responsive.laptop} 60vw, 100vw`}
           />
-          <h5>{other.name}</h5>
-          <Button primary href={other.slug}>
+          <h5>{name}</h5>
+          <Button primary href={slug}>
             SEE PRODUCT
           </Button>
         </article>
