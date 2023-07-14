@@ -1,29 +1,32 @@
-import Link from 'next/link';
-import { FC } from 'react';
+import Link from "next/link";
+import { FC } from "react";
 
-import { ButtonProps } from './buttonTypes';
+import { ButtonProps } from "./buttonTypes";
 
 const Button: FC<ButtonProps> = ({
   primary,
   secondary,
   tertiary,
+  fourthly,
   isMargin,
   href,
   children,
   dynamicStyles,
 }) => {
   const buttonGlobals = primary
-    ? 'btn-primary'
+    ? "btn-primary"
     : secondary
-    ? 'btn-secondary'
+    ? "btn-secondary"
     : tertiary
-    ? 'btn-tertiary'
-    : '';
+    ? "btn-tertiary"
+    : fourthly
+    ? "btn-fourthly"
+    : "";
 
-  const buttonTopMargin = isMargin ? 'mt-8' : '';
+  const buttonTopMargin = isMargin ? "mt-8" : "";
   return (
     <Link
-      href={href || ''}
+      href={href || ""}
       className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
     >
       {children}
