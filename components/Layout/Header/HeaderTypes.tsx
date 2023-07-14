@@ -9,7 +9,7 @@ import HeroImgLaptop from "public/assets/home/desktop/image-hero.jpg";
 type Props = {
   slug?: string;
 };
-export const HeroHeader: FC<Props> = ({}) => {
+export const HeroHeader: FC<Props> = () => {
   const renderImages = () => {
     return (
       <>
@@ -36,9 +36,6 @@ export const HeroHeader: FC<Props> = ({}) => {
       <Article dynamicStyles="flex flex-col justify-center text-center text-white items-center  lg:max-w-[37.9rem] md:p-0 lg:items-start lg:text-left px-[2.4rem] py-[11rem] z-10 ">
         <h1 className="h1-mobile">XX99 Mark II Headphones</h1>
         <p className="body">
-      <Article dynamicStyles="flex flex-col justify-center text-center text-white items-center  lg:max-w-[37.9rem] md:p-0 lg:items-start lg:text-left px-[2.4rem] py-[11rem] z-10 ">
-        <h1 className="h1-mobile">XX99 Mark II Headphones</h1>
-        <p className="body">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
@@ -54,7 +51,6 @@ export const HeroHeader: FC<Props> = ({}) => {
 export const CategoryHeader: FC<Props> = ({ slug }) => {
   return (
     <>
-      <Article dynamicStyles="flex justify-center text-white items-center z-10 lg:w-full">
       <Article dynamicStyles="flex justify-center text-white items-center z-10 lg:w-full">
         <h2>{slug}</h2>
       </Article>
