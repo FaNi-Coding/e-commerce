@@ -1,15 +1,15 @@
-import { FC } from "react";
-import Section from "../../../UI/Section/Section";
-import { responsive } from "@/styles/responsive";
-import CoverImageComp from "../../../UI/Image/CoverImageComp";
 import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
+import { responsive } from "@/styles/responsive";
+import { FC } from "react";
+
+import CoverImageComp from "../../../UI/Image/CoverImageComp";
+import Section from "../../../UI/Section/Section";
 
 type Props = {
   categoryProducts: CategoryProductProps;
 };
 
 const ProductGrid: FC<Props> = ({ categoryProducts }) => {
-  console.log("categoryProducts", categoryProducts);
 
   const gridArray = categoryProducts
     .map(({ gallery }) => [

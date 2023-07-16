@@ -1,33 +1,33 @@
-"use client";
-import React, { MouseEvent, useState } from "react";
-
+'use client';
+import React, { MouseEvent, useState } from 'react';
+import { _useSelector, _useDispatch } from '@/app/hooks';
+import {
+  decrement,
+  increment,
+  reset,
+} from '../../../redux/features/counter/counterSlice';
 type Props = {};
 
 const CountProductAmount = (props: Props) => {
-  const [count, setCount] = useState(0);
+  /*  const count = _useSelector((state) => state.CounterReducer); */
+  const count = _useSelector((state) => state.CounterReducer.value);
+  const dispatch = _useDispatch();
 
-  const handleCount = (e: MouseEvent<HTMLElement>) => {
-    e.preventDefault;
-    const target = e.target as HTMLButtonElement;
-    if (target) {
-      setCount((prev) => (target.id === "minus-button" ? prev - 1 : prev + 1));
-    }
-  };
   return (
-    <div className="flex justify-between items-center p-[.15rem] gap-[.8rem] w-full bg-tertiary">
+    <div className='flex justify-between items-center p-[.15rem] gap-[.8rem] w-full bg-tertiary'>
       <button
-        className="w-full h-full border-none hoverTertiary disabled:cursor-not-allowed"
-        onClick={handleCount}
-        id="minus-button"
+        className='w-full h-full border-none hoverTertiary disabled:cursor-not-allowed'
+        onClick={() => dispatch(decrement())}
+        id='minus-button'
         disabled={count <= 0}
       >
         -
       </button>
-      <p className="body">{count}</p>
+      <p className='body'>{count}</p>
       <button
-        className="w-full h-full border-none hoverTertiary"
-        onClick={handleCount}
-        id="plus-button"
+        className='w-full h-full border-none hoverTertiary'
+        onClick={() => dispatch(increment())}
+        id='plus-button'
       >
         +
       </button>
