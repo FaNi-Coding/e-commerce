@@ -1,12 +1,16 @@
-"use client";
-import { FC } from "react";
-import { usePathname } from "next/navigation";
-import Cart from "@/components/Icons/Cart";
-import Section from "@/components/UI/Section/Section";
-import { findPathname } from "@/utils/functions";
-import MobileNav from "../Nav/MobileNav";
-import Nav from "../Nav/Nav";
-import { HeroHeader, CategoryHeader } from "./HeaderTypes";
+'use client';
+import { FC } from 'react';
+import { usePathname } from 'next/navigation';
+import Cart from '@/components/Icons/Cart';
+import Section from '@/components/UI/Section/Section';
+import { findPathname } from '@/utils/functions';
+import MobileNav from '../Nav/MobileNav';
+import Nav from '../Nav/Nav';
+import { HeroHeader, CategoryHeader } from './HeaderTypes';
+import useToggleDialog from '@/hooks/useToggleDialog';
+import MyDialog from '@/components/UI/Dialog';
+import { _useDispatch, _useSelector } from '@/app/hooks';
+import { toggle } from '@/redux/features/toggler/togglerSlice';
 
 type Props = {};
 const Header: FC<Props> = () => {
@@ -14,18 +18,20 @@ const Header: FC<Props> = () => {
   const isHero = !findPathname(_slug, 1);
   const isCategory = findPathname(_slug, 1);
   const isProduct = findPathname(_slug, 2);
+  const isOpen = _useSelector((state) => state.ToggleReducer.value);
+  const dispatch = _useDispatch();
 
   const headerStyles = () => {
     if (isHero && !isProduct) {
-      return "max-width-container-header h-[60rem] md:h-[72.9rem] relative";
+      return 'max-width-container-header h-[60rem] md:h-[72.9rem] relative';
     }
     if (isCategory && !isProduct) {
-      return "max-width-container-category-header md:h-[33.6rem] relative";
+      return 'max-width-container-category-header md:h-[33.6rem] relative';
     }
     if (isProduct) {
-      return "container mx-auto relative";
+      return 'container mx-auto relative';
     }
-    return "";
+    return '';
   };
 
   const renderHeader = () => {
@@ -42,12 +48,16 @@ const Header: FC<Props> = () => {
   return (
     <>
       <header>
-        <Section dynamicStyles={headerStyles()} bgColor="bg-header">
-          <Nav icon={<Cart />} navHeight="h-[8.9rem] md:h-[9.6rem]">
+        <Section dynamicStyles={headerStyles()} bgColor='bg-header'>
+          <Nav
+            icon={<Cart onClick={dispatch(toggle)} />}
+            navHeight='h-[8.9rem] md:h-[9.6rem]'
+          >
             <MobileNav />
           </Nav>
           {renderHeader()}
         </Section>
+        {isOpen && <MyDialog />}
       </header>
     </>
   );

@@ -1,25 +1,24 @@
-import { useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import { Dialog } from '@headlessui/react';
+import { type } from 'os';
+import useToggleDialog from '@/hooks/useToggleDialog';
 
-function MyDialog() {
-  let [isOpen, setIsOpen] = useState(true);
+type DialogProps = {
+  children?: ReactNode;
+  isOpenProp?: boolean;
+};
+const MyDialog: FC<DialogProps> = ({ children, isOpenProp }) => {
+  const { showDialog, setShowDialog } = useToggleDialog();
+  console.log('dialog open', showDialog);
 
   return (
-    <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+    <Dialog as='div' open={showDialog} onClose={() => setShowDialog(false)}>
       <Dialog.Panel>
-        <Dialog.Title>Deactivate account</Dialog.Title>
-        <Dialog.Description>
-          This will permanently deactivate your account
-        </Dialog.Description>
+        <Dialog.Title>CART</Dialog.Title>
 
-        <p>
-          Are you sure you want to deactivate your account? All of your data
-          will be permanently removed. This action cannot be undone.
-        </p>
-
-        <button onClick={() => setIsOpen(false)}>Deactivate</button>
-        <button onClick={() => setIsOpen(false)}>Cancel</button>
+        <button onClick={() => setShowDialog(false)}>CHECKOUT</button>
       </Dialog.Panel>
     </Dialog>
   );
-}
+};
+export default MyDialog;

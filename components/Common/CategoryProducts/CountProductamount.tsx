@@ -5,7 +5,7 @@ import {
   decrement,
   increment,
   reset,
-} from '../../../redux/features/counter/counterSlice';
+} from '@/redux/features/counter/counterSlice';
 type Props = {};
 
 const CountProductAmount = (props: Props) => {
