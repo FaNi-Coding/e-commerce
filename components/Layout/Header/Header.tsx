@@ -9,7 +9,6 @@ import Nav from "../Nav/Nav";
 import { HeroHeader, CategoryHeader } from "./HeaderTypes";
 import useToggleDialog from "@/hooks/useToggleDialog";
 import { _useDispatch, _useSelector } from "@/app/hooks";
-import { toggle } from "@/redux/features/toggler/togglerSlice";
 import _Dialog from "@/components/UI/Dialog";
 
 type Props = {};
@@ -18,8 +17,8 @@ const Header: FC<Props> = () => {
   const isHero = !findPathname(_slug, 1);
   const isCategory = findPathname(_slug, 1);
   const isProduct = findPathname(_slug, 2);
-  const isOpen = _useSelector((state) => state.ToggleReducer.active);
-  const dispatch = _useDispatch();
+
+  const { toggleDialog } = useToggleDialog();
 
   const headerStyles = () => {
     if (isHero && !isProduct) {
@@ -50,7 +49,7 @@ const Header: FC<Props> = () => {
       <header>
         <Section dynamicStyles={headerStyles()} bgColor="bg-header">
           <Nav
-            icon={<Cart onClick={() => dispatch(toggle())} />}
+            icon={<Cart onClick={toggleDialog} />}
             navHeight="h-[8.9rem] md:h-[9.6rem]"
           >
             <MobileNav />

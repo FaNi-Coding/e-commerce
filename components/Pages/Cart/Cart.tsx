@@ -11,11 +11,11 @@ import { reset } from "@/redux/features/counter/counterSlice";
 import Button from "@/components/UI/Button/Button";
 
 const Cart: FC = () => {
-  const isOpen = _useSelector((state) => state.ToggleReducer.active);
   const dispatch = _useDispatch();
+  const { isOpen, toggleDialog } = useToggleDialog();
 
   return (
-    <_Dialog open={isOpen} close={() => dispatch(toggle())}>
+    <_Dialog open={isOpen} close={toggleDialog}>
       <Dialog.Panel className="p-[3.2rem] bg-white bg-red flex flex-col items-center gap-[3.2rem] z-50 w-[37.7rem] rounded-[.8rem]">
         <Dialog.Title className="flex justify-between items-center w-full">
           <h6>CART</h6>
@@ -42,10 +42,10 @@ const Cart: FC = () => {
           </li>
         </ul>
         <div className="flex justify-between items-center w-full">
-          <Button primary type="button" onClick={() => dispatch(toggle())}>
+          <Button primary type="button" onClick={toggleDialog}>
             CHECKOUT
           </Button>
-          <Button secondary type="button" onClick={() => dispatch(toggle())}>
+          <Button secondary type="button" onClick={toggleDialog}>
             Close
           </Button>
         </div>

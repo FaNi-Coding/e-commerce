@@ -1,10 +1,9 @@
 "use client";
-import React, { MouseEvent, useState } from "react";
+import React from "react";
 import { _useSelector, _useDispatch } from "@/app/hooks";
 import { decrement, increment } from "@/redux/features/counter/counterSlice";
-type Props = {};
 
-const CountProductAmount = (props: Props) => {
+const CountProductAmount = () => {
   const count = _useSelector((state) => state.CounterReducer.value);
   const dispatch = _useDispatch();
 

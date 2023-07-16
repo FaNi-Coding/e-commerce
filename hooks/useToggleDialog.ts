@@ -1,16 +1,15 @@
-import { _useSelector } from '@/app/hooks';
-import { useState } from 'react';
-
+import {  _useDispatch ,_useSelector } from '@/app/hooks';
+import { toggle } from "@/redux/features/toggler/togglerSlice";
 
 
 const useToggleDialog = () => {
-  const toggle = _useSelector((state) => state.ToggleReducer.value)
-  const [showDialog, setShowDialog] = useState(toggle);
+  const isOpen = _useSelector((state) => state.ToggleReducer.active)
+  const dispatch = _useDispatch();
 
 
   const toggleDialog = () => {
-    setShowDialog(prev => !prev);
+    dispatch(toggle())
   };
-  return { showDialog, toggleDialog };
+  return { isOpen, toggleDialog };
 };
 export default useToggleDialog;
