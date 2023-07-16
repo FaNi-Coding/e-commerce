@@ -9,4 +9,6 @@ export type ButtonProps = {
   href?: string
   children?: ReactNode
   dynamicStyles?: string
+  type?: 'button' | 'link'
+  onClick?: () => void
 }

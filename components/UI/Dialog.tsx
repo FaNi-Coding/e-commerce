@@ -1,24 +1,27 @@
-import { FC, ReactNode, useState } from 'react';
-import { Dialog } from '@headlessui/react';
-import { type } from 'os';
-import useToggleDialog from '@/hooks/useToggleDialog';
+import { FC, ReactNode } from "react";
+import { Dialog } from "@headlessui/react";
+import useToggleDialog from "@/hooks/useToggleDialog";
+import Button from "./Button/Button";
 
 type DialogProps = {
+  open: boolean;
+  close: () => void;
   children?: ReactNode;
-  isOpenProp?: boolean;
 };
-const MyDialog: FC<DialogProps> = ({ children, isOpenProp }) => {
-  const { showDialog, setShowDialog } = useToggleDialog();
-  console.log('dialog open', showDialog);
-
+const _Dialog: FC<DialogProps> = ({ children, open, close }) => {
   return (
-    <Dialog as='div' open={showDialog} onClose={() => setShowDialog(false)}>
-      <Dialog.Panel>
-        <Dialog.Title>CART</Dialog.Title>
-
-        <button onClick={() => setShowDialog(false)}>CHECKOUT</button>
-      </Dialog.Panel>
-    </Dialog>
+    <>
+      {open && (
+        <Dialog
+          className="absolute inset-0 w-full h-full grid place-items-center z-50 bg-black/80"
+          as="div"
+          open={open}
+          onClose={close}
+        >
+          {children}
+        </Dialog>
+      )}
+    </>
   );
 };
-export default MyDialog;
+export default _Dialog;

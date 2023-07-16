@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type TogglerState = {
-  value: boolean;
+  active: boolean;
 };
 
 const initialState = {
-  active: value,
+  active: false,
 } as TogglerState;
 
 export const toggler = createSlice({
@@ -14,7 +14,7 @@ export const toggler = createSlice({
   reducers: {
     isOpen: () => initialState,
     toggle: (state) => {
-      state.value = !state.value;
+      state.active = !state.active
     },
   
   },

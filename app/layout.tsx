@@ -1,16 +1,17 @@
-import Footer from '@/components/Layout/Footer/Footer';
-import Header from '@/components/Layout/Header/Header';
-import { ReduxProvider } from '@/redux/provider';
-import { Manrope } from 'next/font/google';
+import Footer from "@/components/Layout/Footer/Footer";
+import Header from "@/components/Layout/Header/Header";
+import { ReduxProvider } from "@/redux/provider";
+import { Manrope } from "next/font/google";
 
-import './globals.css';
+import "./globals.css";
+import Cart from "@/components/Pages/Cart/Cart";
 
-const manrope = Manrope({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'E-commerce 2.0',
+  title: "E-commerce",
   description:
-    'E-commerce 2.0 is a demo e-commerce site built with Next.js and TypeScript.',
+    "E-commerce is a ongoing development project site built with Next.js and TypeScript.",
 };
 
 export default function RootLayout({
@@ -19,14 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={manrope.className}>
-        <ReduxProvider>
+    <html lang="en">
+      <ReduxProvider>
+        <body className={manrope.className}>
           <Header />
           <main>{children}</main>
           <Footer />
-        </ReduxProvider>
-      </body>
+          <Cart />
+        </body>
+      </ReduxProvider>
     </html>
   );
 }

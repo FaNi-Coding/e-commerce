@@ -12,6 +12,8 @@ const Button: FC<ButtonProps> = ({
   href,
   children,
   dynamicStyles,
+  type = "link",
+  onClick,
 }) => {
   const buttonGlobals = primary
     ? "btn-primary"
@@ -25,12 +27,24 @@ const Button: FC<ButtonProps> = ({
 
   const buttonTopMargin = isMargin ? "mt-8" : "";
   return (
-    <Link
-      href={href || ""}
-      className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
-    >
-      {children}
-    </Link>
+    <>
+      {type === "link" && (
+        <Link
+          href={href || ""}
+          className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
+        >
+          {children}
+        </Link>
+      )}
+      {type === "button" && (
+        <button
+          onClick={onClick}
+          className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
+        >
+          {children}
+        </button>
+      )}
+    </>
   );
 };
 export default Button;
