@@ -28,6 +28,7 @@ module.exports = {
       white: '#FFFFFF',
       black: '#000000',
       header: '#181818',
+      backdrop: '#979797'
 
     },
     extend: {

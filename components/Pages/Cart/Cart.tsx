@@ -1,9 +1,8 @@
 "use client";
 import { Dialog } from "@headlessui/react";
-import { FC, ReactNode, useState } from "react";
+import { FC } from "react";
 import useToggleDialog from "@/hooks/useToggleDialog";
 import _Dialog from "@/components/UI/Dialog";
-import { toggle } from "@/redux/features/toggler/togglerSlice";
 import { _useDispatch, _useSelector } from "@/app/hooks";
 import CoverImageComp from "@/components/UI/Image/CoverImageComp";
 import CountProductAmount from "@/components/Common/CategoryProducts/CountProductamount";
