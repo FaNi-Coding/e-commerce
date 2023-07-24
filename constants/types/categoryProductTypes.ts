@@ -37,6 +37,7 @@ export type CategoryProductProps = {
     features: string;
     gallery: GalleryTypes
     id: number;
+    amount: number,
     image: ImageTypes
     includes: IncludeTypes;
     name: string;
