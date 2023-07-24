@@ -41,8 +41,30 @@ export type CategoryProductProps = {
     image: ImageTypes
     includes: IncludeTypes;
     name: string;
-    new: boolean;
+    newest: boolean;
     others: OthersTypes
-    price?: number;
+    price: number;
     slug: string;
   }[];
+
+  export type ProductType = {
+    name: string;
+    newest: boolean;
+    description: string;
+    price: number | undefined;
+    image: {
+      mobile: string;
+      desktop: string;
+    };
+  };
+
+  export type CategoryProductType = {
+    name: string;
+    newest: boolean;
+    description: string;
+    slug: string;
+    image: {
+      mobile: string
+      desktop: string;
+    };
+  };

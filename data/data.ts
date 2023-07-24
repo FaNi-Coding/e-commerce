@@ -18,7 +18,7 @@ export const products = [
       desktop:
         "/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg",
     },
-    new: true,
+    newest: true,
     price: 599,
     description:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
@@ -318,7 +318,7 @@ export const products = [
       desktop:
         "/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
     },
-    new: true,
+    newest: true,
     price: 2999,
     description:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
@@ -517,7 +517,7 @@ export const products = [
       desktop:
         "/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg",
     },
-    new: true,
+    newest: true,
     price: 4500,
     description:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
