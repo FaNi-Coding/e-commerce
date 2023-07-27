@@ -1,7 +1,7 @@
 export const products = [
   {
-    id: 1,
-    amount: 1,
+    id: "1",
+    amount: 0,
     slug: "yx1-earphones",
     name: "YX1 Wireless Earphones",
     image: {
@@ -95,8 +95,8 @@ export const products = [
     ],
   },
   {
-    id: 2,
-    amount: 1,
+    id: "2",
+    amount: 0,
     slug: "xx59-headphones",
     name: "XX59 Headphones",
     image: {
@@ -113,7 +113,7 @@ export const products = [
       desktop:
         "/assets/product-xx59-headphones/desktop/image-category-page-preview.jpg",
     },
-    new: false,
+    newest: false,
     price: 899,
     description:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
@@ -194,8 +194,8 @@ export const products = [
     ],
   },
   {
-    id: 3,
-    amount: 1,
+    id: "3",
+    amount: 0,
     slug: "xx99-mark-one-headphones",
     name: "XX99 Mark I Headphones",
     image: {
@@ -215,7 +215,7 @@ export const products = [
       desktop:
         "/assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
     },
-    new: false,
+    newest: false,
     price: 1750,
     description:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
@@ -297,8 +297,8 @@ export const products = [
     ],
   },
   {
-    id: 4,
-    amount: 1,
+    id: "4",
+    amount: 0,
     slug: "xx99-mark-two-headphones",
     name: "XX99 Mark II Headphones",
     image: {
@@ -404,8 +404,8 @@ export const products = [
     ],
   },
   {
-    id: 5,
-    amount: 1,
+    id: "5",
+    amount: 0,
     slug: "zx7-speaker",
     name: "ZX7 Speaker",
     image: {
@@ -422,7 +422,7 @@ export const products = [
       desktop:
         "/assets/product-zx7-speaker/desktop/image-category-page-preview.jpg",
     },
-    new: false,
+    newest: false,
     price: 3500,
     description:
       "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
@@ -499,8 +499,8 @@ export const products = [
     ],
   },
   {
-    id: 6,
-    amount: 1,
+    id: "6",
+    amount: 0,
     slug: "zx9-speaker",
     name: "ZX9 Speaker",
     image: {

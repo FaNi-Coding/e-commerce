@@ -36,7 +36,7 @@ export type CategoryProductProps = {
     description: string;
     features: string;
     gallery: GalleryTypes
-    id: number;
+    id: string;
     amount: number,
     image: ImageTypes
     includes: IncludeTypes;
@@ -52,6 +52,8 @@ export type CategoryProductProps = {
     newest: boolean;
     description: string;
     price: number | undefined;
+    id: string
+    amount: number
     image: {
       mobile: string;
       desktop: string;

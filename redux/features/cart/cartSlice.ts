@@ -5,9 +5,9 @@ type cartState = {
     cart: CategoryProductProps;
   };
   
-  const initialState: cartState = {
+  const initialState  = {
     cart: [],
-  } 
+  } as cartState
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -22,7 +22,7 @@ const cartSlice = createSlice({
       }
     },
     incrementAmount: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload);
+      const item = state.cart.find((item) => item.id !== action.payload);
       if (item)
       item.amount++;
     },

@@ -1,30 +1,15 @@
-"use client";
-import React from "react";
-import { _useSelector, _useDispatch } from "@/app/hooks";
-import { decrement, increment } from "@/redux/features/counter/counterSlice";
+import { CategoryProductProps } from "@/constants/types/categoryProductTypes";
+import { Action, ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
+import { FC, ReactNode } from "react";
 
-const CountProductAmount = () => {
-  const count = _useSelector((state) => state.CounterReducer.value);
-  const dispatch = _useDispatch();
+type Props = {
+  children: ReactNode;
+};
 
+const CountProductAmount: FC<Props> = ({ children }) => {
   return (
     <div className="flex justify-between items-center p-[.15rem] gap-[.8rem] w-full bg-tertiary">
-      <button
-        className="w-full h-full border-none hoverTertiary disabled:cursor-not-allowed"
-        onClick={() => dispatch(decrement())}
-        id="minus-button"
-        disabled={count <= 0}
-      >
-        -
-      </button>
-      <p className="body">{count}</p>
-      <button
-        className="w-full h-full border-none hoverTertiary"
-        onClick={() => dispatch(increment())}
-        id="plus-button"
-      >
-        +
-      </button>
+      {children}
     </div>
   );
 };
