@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { FC } from "react";
+import Link from 'next/link';
+import { FC } from 'react';
 
-import { ButtonProps } from "./buttonTypes";
+import { ButtonProps } from './buttonTypes';
 
 const Button: FC<ButtonProps> = ({
   primary,
@@ -12,37 +12,45 @@ const Button: FC<ButtonProps> = ({
   href,
   children,
   dynamicStyles,
-  type = "link",
+  type = 'link',
+  value,
   onClick,
 }) => {
   const buttonGlobals = primary
-    ? "btn-primary"
+    ? 'btn-primary'
     : secondary
-    ? "btn-secondary"
+    ? 'btn-secondary'
     : tertiary
-    ? "btn-tertiary"
+    ? 'btn-tertiary'
     : fourthly
-    ? "btn-fourthly"
-    : "";
+    ? 'btn-fourthly'
+    : '';
 
-  const buttonTopMargin = isMargin ? "mt-8" : "";
+  const buttonTopMargin = isMargin ? 'mt-8' : '';
   return (
     <>
-      {type === "link" && (
+      {type === 'link' && (
         <Link
-          href={href || ""}
+          href={href || ''}
           className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
         >
           {children}
         </Link>
       )}
-      {type === "button" && (
+      {type === 'button' && (
         <button
           onClick={onClick}
           className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
         >
           {children}
         </button>
+      )}
+      {type === 'submit' && (
+        <input
+          type='submit'
+          value={value}
+          className={`${buttonGlobals} ${buttonTopMargin} ${dynamicStyles}`}
+        />
       )}
     </>
   );

@@ -3,15 +3,12 @@ import Article from '@/components/UI/Article/Article';
 import Button from '@/components/UI/Button/Button';
 import CoverImageComp from '@/components/UI/Image/CoverImageComp';
 import { responsive } from '@/styles/responsive';
-import React, { FC } from 'react';
-import CountProductAmount from './CountProductamount';
+import React, { FC, FormEvent, useState } from 'react';
 import { ProductType } from '@/constants/types/categoryProductTypes';
 import { _useDispatch, _useSelector } from '@/app/hooks';
-import {
-  incrementAmount,
-  decrementAmount,
-  addToCart,
-} from '@/redux/features/cart/cartSlice';
+import { addToCart } from '@/redux/features/cart/cartSlice';
+
+import { increment, decrement } from '@/redux/features/counter/counterSlice';
 
 type Props = {
   product: ProductType;
@@ -20,23 +17,28 @@ type Props = {
 const Product: FC<Props> = ({
   product: {
     id,
-    amount = 0,
+    amount,
     name,
     description,
     price,
     newest,
-    image: { desktop },
+    image: { desktop, mobile },
   },
 }) => {
   const dispatch = _useDispatch();
-  const cart = _useSelector((state) => state.CartReducer.cart);
+  const [count, setCount] = useState(1);
 
-  const getTotalAmount = () => {
-    let total = 0;
-    cart.forEach((item) => {
-      total += item.amount;
-    });
-    return total;
+  const handleAddToCart = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(
+      addToCart({
+        id,
+        name,
+        img: mobile,
+        price,
+        amount: count,
+      })
+    );
   };
 
   return (
@@ -49,25 +51,29 @@ const Product: FC<Props> = ({
         <h2>{name}</h2>
         <p>{description}</p>
         <p className='body'>$ {price}</p>
-        <div className='grid grid-cols-2 gap-[1rem] mt-8'>
-          <CountProductAmount>
-            <button
+        <form
+          className='grid grid-cols-2 gap-[1rem] mt-8'
+          onSubmit={handleAddToCart}
+        >
+          <div className='flex justify-between items-center p-[.15rem] gap-[.8rem] w-full bg-tertiary'>
+            <input
+              type='button'
               className='w-full h-full border-none hoverTertiary disabled:cursor-not-allowed'
-              onClick={() => dispatch(decrementAmount(id))}
-              disabled={getTotalAmount() < 1}
-            >
-              -
-            </button>
-            <p className='body'>{getTotalAmount() || 0}</p>
-            <button
+              onClick={() => setCount((prev) => prev - 1)}
+              disabled={count <= 1}
+              value='-'
+            />
+            <p className='body'>{count}</p>
+            <input
+              type='button'
               className='w-full h-full border-none hoverTertiary'
-              onClick={() => dispatch(incrementAmount(id))}
-            >
-              +
-            </button>
-          </CountProductAmount>
-          <Button primary>add to cart</Button>
-        </div>
+              onClick={() => setCount((prev) => prev + 1)}
+              disabled={count === amount}
+              value='+'
+            />
+          </div>
+          <Button type='submit' value='add to cart' primary />
+        </form>
       </Article>
       <CoverImageComp
         dynamicWrapperStyles='relative w-full h-[35.2rem] md:self-center lg:self-start lg:h-[56rem] md:w-1/2'

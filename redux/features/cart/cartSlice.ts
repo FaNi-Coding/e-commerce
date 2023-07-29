@@ -2,13 +2,22 @@ import { CategoryProductProps } from '@/constants/types/categoryProductTypes';
 import { createSlice } from '@reduxjs/toolkit';
 import { products } from '@/data/data';
 
+export type CartType = {
+  id: string;
+  name: string;
+  img: string;
+  price: string;
+  amount: number;
+}[];
+
 type cartState = {
-    cart: CategoryProductProps;
+    cart: CartType;
   };
   
-  const initialState  = {
-    cart: products
-  } as cartState
+  const initialState: cartState  = {
+    cart: []
+  }
+  
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -19,13 +28,12 @@ const cartSlice = createSlice({
       if (itemInCart) {
         itemInCart.amount++;
       } else {
-        state.cart.push({ ...action.payload, amount: 1 });
+        state.cart.push({ ...action.payload });
       }
     },
     incrementAmount: (state, action) => {
       const item = state.cart.find((item) => item.id === action.payload);
       if (item){
-      console.log(item.amount);
       item.amount++;}
     },
     decrementAmount: (state, action) => {
@@ -34,7 +42,6 @@ const cartSlice = createSlice({
       if (item.amount === 1) {
         item.amount = 1
       } else {
-        console.log(item.amount);
         item.amount--;
       }
     },

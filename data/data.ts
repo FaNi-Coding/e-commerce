@@ -96,7 +96,7 @@ export const products = [
   },
   {
     id: "2",
-    amount: 0,
+    amount: 6,
     slug: "xx59-headphones",
     name: "XX59 Headphones",
     image: {
@@ -298,7 +298,7 @@ export const products = [
   },
   {
     id: "4",
-    amount: 0,
+    amount: 2,
     slug: "xx99-mark-two-headphones",
     name: "XX99 Mark II Headphones",
     image: {

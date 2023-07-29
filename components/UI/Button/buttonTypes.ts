@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, MouseEvent } from 'react'
 
 export type ButtonProps = {
   primary?: boolean
@@ -7,8 +7,9 @@ export type ButtonProps = {
   fourthly?: boolean
   isMargin?: boolean
   href?: string
+  value?:string
   children?: ReactNode
   dynamicStyles?: string
-  type?: 'button' | 'link'
-  onClick?: () => void
+  type?: 'button' | 'link' | 'submit'
+  onClick?: (e: MouseEvent) => void
 }
