@@ -1,7 +1,7 @@
 export const products = [
   {
     id: "1",
-    amount: 0,
+    amount: 8,
     slug: "yx1-earphones",
     name: "YX1 Wireless Earphones",
     image: {
@@ -195,7 +195,7 @@ export const products = [
   },
   {
     id: "3",
-    amount: 0,
+    amount: 10,
     slug: "xx99-mark-one-headphones",
     name: "XX99 Mark I Headphones",
     image: {
@@ -405,7 +405,7 @@ export const products = [
   },
   {
     id: "5",
-    amount: 0,
+    amount: 1,
     slug: "zx7-speaker",
     name: "ZX7 Speaker",
     image: {

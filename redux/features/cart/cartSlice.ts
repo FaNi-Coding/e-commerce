@@ -1,4 +1,3 @@
-import { CategoryProductProps } from '@/constants/types/categoryProductTypes';
 import { products } from '@/data/data';
 import { createSlice } from '@reduxjs/toolkit';
 

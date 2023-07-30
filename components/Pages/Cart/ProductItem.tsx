@@ -21,7 +21,7 @@ const ProductItem: FC<Props> = ({ item: { name, img, price }, children }) => {
           {name}
         </p>
         <p className='text-[1.4rem] leading-[2.5rem] font-medium text-grey'>
-          {price}
+          $ {price.toLocaleString('en-US')}
         </p>
       </div>
 
