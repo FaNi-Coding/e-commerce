@@ -1,12 +1,12 @@
 import { CategoryProductProps } from '@/constants/types/categoryProductTypes';
-import { createSlice } from '@reduxjs/toolkit';
 import { products } from '@/data/data';
+import { createSlice } from '@reduxjs/toolkit';
 
 export type CartType = {
   id: string;
   name: string;
   img: string;
-  price: string;
+  price: number;
   amount: number;
 }[];
 
@@ -25,29 +25,36 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const itemInCart = state.cart.find((item) => item.id === action.payload.id);
+      const availableProduct = products.find((product) => product.id === action.payload.id);
+    
       if (itemInCart) {
-        itemInCart.amount++;
+        if (availableProduct && itemInCart.amount + 1 <= availableProduct.amount) {
+          itemInCart.amount++;
+        }
       } else {
         state.cart.push({ ...action.payload });
       }
     },
     incrementAmount: (state, action) => {
       const item = state.cart.find((item) => item.id === action.payload);
-      if (item){
-      item.amount++;}
+      const availableProduct = products.find((product) => product.id === action.payload);
+    
+      if (item && availableProduct && item.amount + 1 <= availableProduct.amount) {
+        item.amount++;
+      }
     },
     decrementAmount: (state, action) => {
       const item = state.cart.find((item) => item.id === action.payload);
-      if(item)
-      if (item.amount === 1) {
-        item.amount = 1
-      } else {
-        item.amount--;
+    
+      if (item) {
+        const availableProduct = products.find((product) => product.id === action.payload);
+        if (availableProduct && item.amount - 1 >= 1) {
+          item.amount--;
+        }
       }
     },
-    removeItem: (state, action) => {
-      const removeItem = state.cart.filter((item) => item.id !== action.payload);
-      state.cart = removeItem;
+    reset: (state) => {
+      state.cart = [];
     },
   },
 });
@@ -56,7 +63,7 @@ export const {
   addToCart,
   incrementAmount,
   decrementAmount,
-  removeItem,
+  reset,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

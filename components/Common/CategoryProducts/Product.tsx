@@ -30,6 +30,7 @@ const Product: FC<Props> = ({
 
   const handleAddToCart = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     dispatch(
       addToCart({
         id,
@@ -55,24 +56,30 @@ const Product: FC<Props> = ({
           className='grid grid-cols-2 gap-[1rem] mt-8'
           onSubmit={handleAddToCart}
         >
-          <div className='flex justify-between items-center p-[.15rem] gap-[.8rem] w-full bg-tertiary'>
-            <input
-              type='button'
-              className='w-full h-full border-none hoverTertiary disabled:cursor-not-allowed'
-              onClick={() => setCount((prev) => prev - 1)}
-              disabled={count <= 1}
-              value='-'
-            />
-            <p className='body'>{count}</p>
-            <input
-              type='button'
-              className='w-full h-full border-none hoverTertiary'
-              onClick={() => setCount((prev) => prev + 1)}
-              disabled={count === amount}
-              value='+'
-            />
-          </div>
-          <Button type='submit' value='add to cart' primary />
+          {amount ? (
+            <>
+              <div className='flex justify-between items-center p-[.15rem] gap-[.8rem] w-full bg-tertiary'>
+                <input
+                  type='button'
+                  className='w-full h-full border-none hoverTertiary disabled:cursor-not-allowed'
+                  onClick={() => setCount((prev) => prev - 1)}
+                  disabled={count <= 1}
+                  value='-'
+                />
+                <p className='body'>{count}</p>
+                <input
+                  type='button'
+                  className='w-full h-full border-none hoverTertiary'
+                  onClick={() => setCount((prev) => prev + 1)}
+                  disabled={count === amount}
+                  value='+'
+                />
+              </div>
+              <Button type='submit' value='add to cart' primary />
+            </>
+          ) : (
+            <h6>not in store</h6>
+          )}
         </form>
       </Article>
       <CoverImageComp
