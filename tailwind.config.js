@@ -21,13 +21,14 @@ module.exports = {
       secondary: '#101010',
       tertiary: '#F1F1F1',
       fourthly: '#fbaf85',
-      "black-hover": '#4C4C4C',
+      grey: '#808080',
+      'black-hover': '#4C4C4C',
       'snow-white': '#FAFAFA',
       error: '#CD2C2C',
       white: '#FFFFFF',
       black: '#000000',
       header: '#181818',
-
+      backdrop: '#979797',
     },
     extend: {
       padding: {
@@ -36,4 +37,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

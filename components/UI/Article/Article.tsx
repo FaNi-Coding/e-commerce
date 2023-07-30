@@ -5,11 +5,14 @@ import * as styles from "./styles";
 type Props = {
   dynamicStyles?: string;
   children: ReactNode;
+  id?: string;
 };
 
-const Article: FC<Props> = ({ children, dynamicStyles }) => {
+const Article: FC<Props> = ({ children, dynamicStyles, id }) => {
   return (
-    <article className={`${styles.Basic} ${dynamicStyles}`}>{children}</article>
+    <article id={id} className={`${styles.Basic} ${dynamicStyles}`}>
+      {children}
+    </article>
   );
 };
 export default Article;
