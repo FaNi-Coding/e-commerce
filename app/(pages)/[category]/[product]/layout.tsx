@@ -1,7 +1,5 @@
 import SimpleHeader from '@/components/Layout/Header/SimpleHeader';
 
-import '@/app/globals.css';
-
 export default function ProductLayout({
   children,
 }: {

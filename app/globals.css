@@ -72,6 +72,12 @@
     font-weight: 700;
   }
 
+  .labelText {
+    font-size: 1.2rem;
+    line-height: auto;
+    font-weight: 700;
+  }
+
 
   @media (max-width: 639px) {
     .h1-mobile {
@@ -117,6 +123,12 @@
   .btn-fourthly {
     @apply px-[3rem] py-[1.5rem] text-white font-bold bg-secondary max-w-max buttonText uppercase hoverFourthly;
   }
+
+  .input {
+    @apply rounded-[.8rem] border-borderGrey border bg-white w-full py-[.18rem] px-[.24rem] placeholder:text-grey
+  }
+
+
   .col-reverse {
     @apply flex-col-reverse;
   }
@@ -212,6 +224,7 @@ button,
 textarea,
 select {
   font: inherit;
+  outline:none;
 }
 
 @media (min-width: 1024px) {

@@ -1,10 +1,8 @@
 import Footer from '@/components/Layout/Footer/Footer';
+import SimpleHeader from '@/components/Layout/Header/SimpleHeader';
+import Cart from '@/components/Pages/Cart/Cart';
 import { ReduxProvider } from '@/redux/provider';
 import { Manrope } from 'next/font/google';
-
-import '@/app/globals.css';
-
-import Cart from '@/components/Pages/Cart/Cart';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -21,6 +19,7 @@ export default function CheckoutLayout({
 }) {
   return (
     <>
+      <SimpleHeader />
       <main>{children}</main>
     </>
   );
