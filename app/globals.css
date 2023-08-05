@@ -199,6 +199,7 @@ body {
 body {
   position: relative;
   text-rendering: optimizeSpeed;
+  background-color: #F1F1F1;
 }
 
 
