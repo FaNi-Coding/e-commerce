@@ -5,7 +5,7 @@ export const MobileNav =
 export const NavWrapper = 'flex gap-[7rem] items-center w-full'
 
 export const HamburgerOverlay =
-  'absolute top-[9.6rem] left-0 h-[100vh] w-full z-10 bg-backdrop/90 z-50'
+  'absolute top-[7.6rem] left-0 h-[100vh] w-full z-10 bg-backdrop/90 z-50'
 
 export const MobileNavBackground =
   'flex flex-col bg-tertiary h-[75vh] w-full px-[2.4rem] py-[3.2rem] gap-[1rem] overflow-scroll'
