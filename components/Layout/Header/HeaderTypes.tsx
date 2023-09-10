@@ -39,7 +39,7 @@ export const HeroHeader: FC<Props> = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Button primary isMargin href="/headphones/xx99-mark-two-headphones">
+        <Button primary isMargin href={Links.HEROCTA}>
           SEE PRODUCT
         </Button>
       </Article>
