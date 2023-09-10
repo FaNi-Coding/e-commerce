@@ -22,6 +22,7 @@ module.exports = {
       tertiary: '#F1F1F1',
       fourthly: '#fbaf85',
       grey: '#808080',
+      borderGrey: '#CFCFCF',
       'black-hover': '#4C4C4C',
       'snow-white': '#FAFAFA',
       error: '#CD2C2C',

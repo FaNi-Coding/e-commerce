@@ -1,29 +1,25 @@
-"use client";
+'use client';
+import { FC, ReactNode, useEffect, useState } from 'react';
+import Hamburger from '../../Icons/Hamburger';
+import { responsive } from '@/styles/responsive';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import CategoryNavItems from './CategoryNavItems';
+import * as styles from './styles';
+import Logo from '../../Icons/Logo';
 
-import { FC, useEffect, useState } from "react";
-import Hamburger from "../../Icons/Hamburger";
-import { responsive } from "@/styles/responsive";
-import useMediaQuery from "@/hooks/useMediaQuery";
-import CategoryNavItems from "./CategoryNavItems";
-import * as styles from "./styles";
-import Cart from "../../Icons/Cart";
-import Logo from "../../Icons/Logo";
-import useToggleDialog from "@/hooks/useToggleDialog";
+type Props = { children: ReactNode };
 
-type Props = {};
-
-const MobileNav: FC = () => {
-  const isTabletL = useMediaQuery(responsive.tablet);
+const MobileNav: FC<Props> = ({ children }) => {
+  const isTabletL = useMediaQuery(responsive.tabletL);
   const [isOpen, setIsOpen] = useState(false);
-  const { toggleDialog } = useToggleDialog();
 
   useEffect(() => {
     if (isTabletL) {
       setIsOpen(false);
     }
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else document.body.style.overflow = "unset";
+      document.body.style.overflow = 'hidden';
+    } else document.body.style.overflow = 'unset';
   }, [isOpen, isTabletL]);
 
   const hamburgerMenu = () => {
@@ -50,7 +46,7 @@ const MobileNav: FC = () => {
           <Hamburger onClick={toggleHamburger} />
           <Logo />
         </div>
-        <Cart onClick={toggleDialog} />
+        {children}
       </nav>
       {hamburgerMenu()}
     </>

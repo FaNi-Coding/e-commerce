@@ -1,8 +1,9 @@
 'use client';
 import { FC, ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import Cart from '@/components/Icons/Cart';
 import Section from '@/components/UI/Section/Section';
-
+import { findPathname } from '@/utils/functions';
 import MobileNav from '../Nav/MobileNav';
 import Nav from '../Nav/Nav';
 import { HeroHeader, CategoryHeader } from './HeaderTypes';
@@ -10,7 +11,7 @@ import useToggleDialog from '@/hooks/useToggleDialog';
 import { _useDispatch, _useSelector } from '@/app/hooks';
 import _Dialog from '@/components/UI/Dialog';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
+import Store, { RootState } from '@/redux/store';
 type Props = {};
 
 export const CartItemsCounter = () => {
@@ -33,16 +34,12 @@ const Header: FC<Props> = () => {
   return (
     <>
       <header>
-        <Section
-          dynamicStyles='max-width-container-header h-[60rem] md:h-[72.9rem] relative'
-          bgColor='bg-header'
-        >
+        <Section dynamicStyles='container mx-auto relative' bgColor='bg-header'>
           <Nav icon={<CartItemsCounter />} navHeight='h-[8.9rem] md:h-[9.6rem]'>
             <MobileNav>
               <CartItemsCounter />
             </MobileNav>
           </Nav>
-          <HeroHeader />
         </Section>
       </header>
     </>
