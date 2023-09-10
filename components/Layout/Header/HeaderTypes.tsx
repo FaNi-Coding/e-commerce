@@ -5,6 +5,7 @@ import CoverImageComp from "@/components/UI/Image/CoverImageComp";
 import HeroImgMobile from "public/assets/home/mobile/image-header.jpg";
 import HeroImgTablet from "public/assets/home/tablet/image-header.jpg";
 import HeroImgLaptop from "public/assets/home/desktop/image-hero.jpg";
+import { Links } from "@/constants/constants";
 
 type Props = {
   slug?: string;
@@ -39,7 +40,7 @@ export const HeroHeader: FC<Props> = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Button primary isMargin>
+        <Button primary isMargin href={Links.HEROCTA}>
           SEE PRODUCT
         </Button>
       </Article>
